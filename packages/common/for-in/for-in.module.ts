@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { NgForIn } from './for-in'
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgForIn } from './for-in';
 
 @NgModule({
   declarations: [NgForIn],

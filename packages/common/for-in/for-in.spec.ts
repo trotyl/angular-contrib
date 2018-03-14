@@ -1,7 +1,5 @@
-import { CommonModule, NgForOf } from '@angular/common';
-import { Component, Directive, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { ForInModule } from './for-in.module';
 
 describe('ngForIn', () => {

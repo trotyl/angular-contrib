@@ -1,1 +1,1 @@
-export * from '../packages/common/common.module'
+export * from '../packages/common/index';
