@@ -1,5 +1,5 @@
 {
-  "name": "ngmiracle",
+  "name": "@angular-contrib/workspace",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
