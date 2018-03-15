@@ -1,9 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { ForInModule, HostModule } from '@angular-contrib/common';
 import { NgModule } from '@angular/core';
-import { ForInModule } from '../lib';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -12,6 +11,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ForInModule,
+    HostModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

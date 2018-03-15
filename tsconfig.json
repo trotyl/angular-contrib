@@ -17,7 +17,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@angular/contrib/*": ["packages/*"]
+      "@angular-contrib/*": ["packages/*"]
     }
   }
 }

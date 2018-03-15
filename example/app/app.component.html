@@ -1,4 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<ng-host class="baz" [ngClass]="{foo: true, bar: false}" [attr.foo]="42" [style.background-color]="'green'"></ng-host>
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -9,5 +10,3 @@
 <ul>
   <li *ngFor="let key in items">{{ key }} - {{ items[key] }}</li>
 </ul>
-
-

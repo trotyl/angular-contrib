@@ -15,7 +15,7 @@
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "../test.ts",
-      "tsconfig": "tsconfig.app.json",
+      "tsconfig": "../tsconfig.app.json",
       "testTsconfig": "../tsconfig.spec.json",
       "prefix": "app",
       "styles": [
@@ -36,7 +36,7 @@
   },
   "lint": [
     {
-      "project": "example/tsconfig.app.json",
+      "project": "tsconfig.app.json",
       "exclude": "**/node_modules/**"
     },
     {

@@ -1,5 +1,5 @@
-import { Directive, DoCheck, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { NgForOf } from '@angular/common';
+import { Directive, DoCheck, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[ngFor][ngForIn]',
