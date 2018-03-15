@@ -16,5 +16,9 @@
       "entryFile": "index.ts"
     },
     "dest": "../../publish/common"
+  },
+  "peerDependencies": {
+    "@angular/core": "^5.0.0",
+    "@angular/common": "^5.0.0"    
   }
 }
