@@ -1,27 +1,54 @@
-# Ngmiracle
+# Angular Contrib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+Angular extensions powered by community.
 
-## Development server
+## Packages
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Package Name              | Features
+------------------------- | ----------------------
+`@angular-contrib/common` | `<ng-host>`, `ngForIn`
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Example of using `<ng-host>` directive.
 
-## Build
+Installing package:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```bash
+npm install @angular-contrib/common
+```
 
-## Running unit tests
+Importing NgModule:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import { HostModule } from '@angular-contrib/common';
 
-## Running end-to-end tests
+@NgModule({
+  imports: [ HostModule ]
+})
+class AppModule { }
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Using features:
 
-## Further help
+```typescript
+@Component({
+  template: `
+    <ng-host [ngClass]="{foo: true, bar: false}"></ng-host>
+    <p>Hello World!</p>
+  `
+})
+class AppComponent { }
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Goals
+
++ Fundamental functionalities only;
++ Lib only (no private API usage);
++ Angular feature requests only;
+
+## Note
+
++ Please do not raise feature request here, instead making that to Angular itself. All features are picked there;
++ All features must be imported individuals due to possible future conflicts;
++ Any feature once implemented by Angular will be deprecated here;
