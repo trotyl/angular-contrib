@@ -2,6 +2,10 @@
 
 Alternative to `NgForOf` for objects or maps.
 
+## Type
+
+**Directive**
+
 ## Provenance
 
 + https://github.com/angular/angular/issues/16430
@@ -52,4 +56,4 @@ class MyComponent {
 
 ## Note
 
-When using objects, keys are sorted alphabetically to make order consistent in all browsers.
++ When using objects, keys are sorted alphabetically to make order consistent in all browsers;
