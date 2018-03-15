@@ -5,8 +5,8 @@ Angular extensions powered by community.
 ## Packages
 
 Package Name              | Features
-------------------------- | ----------------------
-`@angular-contrib/common` | `<ng-host>`, `ngForIn`
+------------------------- | -------------------------------------------
+`@angular-contrib/common` | [`<ng-host>`][NgHost], [`ngForIn`][NgForIn]
 
 ## Usage
 
@@ -52,3 +52,7 @@ class AppComponent { }
 + Please do not raise feature request here, instead making that to Angular itself. All features are picked there;
 + All features must be imported individuals due to possible future conflicts;
 + Any feature once implemented by Angular will be deprecated here;
+
+
+[NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in
+[NgHost]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/host
