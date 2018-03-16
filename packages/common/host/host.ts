@@ -55,10 +55,6 @@ function interceptRenderer(renderer: Renderer2): void {
     addClass.call(this, targetOf(this, el), name);
   };
 
-  renderer.listen = function (target: 'window' | 'document' | 'body' | any, eventName: string, callback: (event: any) => boolean | void): () => void {
-    return listen.call(this, targetOf(this, target), eventName, callback);
-  };
-
   renderer.removeAttribute = function (el: any, name: string, namespace?: string | null): void {
     removeAttribute.call(this, targetOf(this, el), name, namespace);
   };
