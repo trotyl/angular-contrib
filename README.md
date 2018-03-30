@@ -6,6 +6,7 @@ Angular extensions powered by community.
 
 Package Name              | Features
 ------------------------- | -------------------------------------------
+`@angular-contrib/core`   | [`IterableDiffers.extend`][IterableDiffersExtensibility], [`KeyValueDiffers.extend`][KeyValueDiffersExtensibility]
 `@angular-contrib/common` | [`<ng-host>`][NgHost], [`ngForIn`][NgForIn], [`ngSwitchCaseContinue`][NgSwitchContinue]
 
 ## Usage
@@ -54,6 +55,8 @@ class AppComponent { }
 + Any feature once implemented by Angular will be deprecated here;
 
 
+[IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/iterable-differs
+[KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/key-value-differs
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in
 [NgHost]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/host
 [NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/switch-continue

@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:core": "ng-packagr -p packages/core/package.json",
     "build:common": "ng-packagr -p packages/common/package.json"
   },
   "private": true,
