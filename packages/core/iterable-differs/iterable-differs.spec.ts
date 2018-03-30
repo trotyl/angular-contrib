@@ -1,4 +1,4 @@
-import { Component, IterableDiffer, IterableDiffers, IterableDifferFactory } from '@angular/core';
+import { IterableDiffer, IterableDiffers, IterableDifferFactory } from '@angular/core';
 import { async, inject, TestBed } from '@angular/core/testing';
 import { IterableDiffersModule } from './iterable-differs.module';
 

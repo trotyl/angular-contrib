@@ -1,4 +1,4 @@
-import { Component, KeyValueDiffer, KeyValueDiffers, KeyValueDifferFactory } from '@angular/core';
+import { KeyValueDiffer, KeyValueDiffers, KeyValueDifferFactory } from '@angular/core';
 import { async, inject, TestBed } from '@angular/core/testing';
 import { KeyValueDiffersModule } from './key-value-differs.module';
 

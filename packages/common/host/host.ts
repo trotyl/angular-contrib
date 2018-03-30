@@ -43,7 +43,6 @@ function transferInitialAttributes(renderer: Renderer2, element: HTMLElement) {
 
 function interceptRenderer(renderer: Renderer2): void {
   const addClass = renderer.addClass;
-  const listen = renderer.listen;
   const removeAttribute = renderer.removeAttribute;
   const removeClass = renderer.removeClass;
   const removeStyle = renderer.removeStyle;
