@@ -6,7 +6,7 @@ Angular extensions powered by community.
 
 Package Name              | Features
 ------------------------- | -------------------------------------------
-`@angular-contrib/common` | [`<ng-host>`][NgHost], [`ngForIn`][NgForIn]
+`@angular-contrib/common` | [`<ng-host>`][NgHost], [`ngForIn`][NgForIn], [`ngSwitchCaseContinue`][NgSwitchContinue]
 
 ## Usage
 
@@ -56,3 +56,4 @@ class AppComponent { }
 
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in
 [NgHost]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/host
+[NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/switch-continue
