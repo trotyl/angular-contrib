@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Renderer2, RendererStyleFlags2 } from '@angular/core';
 
-const NG_HOST_ELEMENTS = '__ng_host_elements__';
+const NG_HOST_ELEMENTS = '__ng_contrib_host_elements__';
 
 @Directive({
   selector: 'ng-host',
