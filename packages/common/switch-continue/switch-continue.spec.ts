@@ -57,6 +57,15 @@ describe('ngSwitchCaseContinue', () => {
     expect(component.textContent).toBe(`+`);
   });
 
+  it('should handle match change', () => {
+    fixture.detectChanges();
+
+    component.value = 1;
+
+    fixture.detectChanges();
+    expect(component.textContent).toBe(`1`);
+  });
+
 });
 
 @Component({

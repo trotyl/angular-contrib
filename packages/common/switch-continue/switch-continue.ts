@@ -1,6 +1,23 @@
 import { Directive, DoCheck, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
-const NG_SWITCH_CONTINUE_PATCHED = '__ng_contrib_switch_continue_patched__';
+export abstract class SwitchViewHandler {
+  protected abstract view: EmbeddedViewRef<any>|null = null;
+  protected abstract vcRef: ViewContainerRef;
+  protected abstract template: TemplateRef<any>;
+
+  protected createView(): void {
+    if (!this.view) {
+      this.view = this.vcRef.createEmbeddedView(this.template);
+    }
+  }
+
+  protected removeView(): void {
+    if (this.view) {
+      this.vcRef.remove(this.vcRef.indexOf(this.view));
+      this.view = null;
+    }
+  }
+}
 
 @Directive({
   selector: '[ngSwitch]',
@@ -23,28 +40,29 @@ export class NgSwitchPatcher implements DoCheck {
 @Directive({
   selector: '[ngSwitchCase]',
 })
-export class NgSwitchCasePatcher implements DoCheck {
+export class NgSwitchCasePatcher extends SwitchViewHandler implements DoCheck {
   @Input() ngSwitchCase: any;
   @Input() ngSwitchCaseContinue: boolean = false;
 
-  private created = false;
+  protected view: EmbeddedViewRef<any>|null = null;
 
-  constructor(private vcRef: ViewContainerRef, private template: TemplateRef<any>, private host: NgSwitchPatcher) { }
+  constructor(
+    protected vcRef: ViewContainerRef,
+    protected template: TemplateRef<any>,
+    private host: NgSwitchPatcher,
+  ) {
+    super();
+  }
 
   ngDoCheck(): void {
-    if (this.host.matchCase(this.ngSwitchCase) && this.ngSwitchCaseContinue) {
-      this.host.continue = true;
+    if (this.host.matchCase(this.ngSwitchCase)) {
+      this.removeView();
+      this.host.continue = this.ngSwitchCaseContinue;
     } else if (this.host.continue) {
-      if (!this.created) {
-        this.vcRef.createEmbeddedView(this.template);
-        this.created = true;
-      }
+      this.createView();
       this.host.continue = this.ngSwitchCaseContinue;
     } else {
-      if (this.created) {
-        this.vcRef.clear();
-        this.created = false;
-      }
+      this.removeView();
     }
   }
 }
@@ -52,22 +70,22 @@ export class NgSwitchCasePatcher implements DoCheck {
 @Directive({
   selector: '[ngSwitchDefault]',
 })
-export class NgSwitchDefaultPatcher implements DoCheck {
-  private created = false;
+export class NgSwitchDefaultPatcher extends SwitchViewHandler implements DoCheck {
+  protected view: EmbeddedViewRef<any>|null = null;
 
-  constructor(private vcRef: ViewContainerRef, private template: TemplateRef<any>, private host: NgSwitchPatcher) { }
+  constructor(
+    protected vcRef: ViewContainerRef,
+    protected template: TemplateRef<any>,
+    private host: NgSwitchPatcher,
+  ) {
+    super();
+  }
 
   ngDoCheck(): void {
     if (this.host.continue) {
-      if (!this.created) {
-        this.vcRef.createEmbeddedView(this.template);
-        this.created = true;
-      }
+      this.createView();
     } else {
-      if (this.created) {
-        this.vcRef.clear();
-        this.created = false;
-      }
+      this.removeView();
     }
   }
 }
