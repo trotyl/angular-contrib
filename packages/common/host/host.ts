@@ -9,12 +9,12 @@ export class NgHost {
   constructor(element: ElementRef, renderer: Renderer2) {
     transferInitialAttributes(renderer, element.nativeElement);
 
-    if (!renderer[NG_HOST_ELEMENTS]) {
-      renderer[NG_HOST_ELEMENTS] = new WeakSet<Element>();
+    if (!(renderer as any)[NG_HOST_ELEMENTS]) {
+      (renderer as any)[NG_HOST_ELEMENTS] = new WeakSet<Element>();
       interceptRenderer(renderer);
     }
 
-    renderer[NG_HOST_ELEMENTS].add(element.nativeElement);
+    (renderer as any)[NG_HOST_ELEMENTS].add(element.nativeElement);
   }
 }
 
@@ -29,7 +29,7 @@ function transferInitialAttributes(renderer: Renderer2, element: HTMLElement) {
 
   for (let i = 0; i < element.style.length; i++) {
     const style = element.style[i];
-    const value = element.style[style];
+    const value: string|null = (element.style as any)[style];
     renderer.setStyle(parent, style, value);
   }
   renderer.removeAttribute(element, 'style');
@@ -82,8 +82,8 @@ function interceptRenderer(renderer: Renderer2): void {
 
 function targetOf(renderer: Renderer2, node: string | any): any {
   if (typeof node !== 'string' &&
-      renderer[NG_HOST_ELEMENTS] instanceof WeakSet &&
-      renderer[NG_HOST_ELEMENTS].has(node)) {
+      (renderer as any)[NG_HOST_ELEMENTS] instanceof WeakSet &&
+      (renderer as any)[NG_HOST_ELEMENTS].has(node)) {
     return renderer.parentNode(node);
   }
   return node;

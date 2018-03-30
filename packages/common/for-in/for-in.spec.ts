@@ -27,7 +27,7 @@ describe('ngForIn', () => {
   it('should reflect added elements via modification', () => {
     fixture.detectChanges();
 
-    component.obj['c'] = 3;
+    component.obj.c = 3;
 
     fixture.detectChanges();
     expect(component.textContent).toBe(`a:1;b:2;c:3;`);
@@ -116,7 +116,7 @@ describe('ngForIn', () => {
 })
 class TestComponent {
   @ViewChild('container') container: ElementRef;
-  obj: {[key: string]: any}|Map<string, string> = {a: 1, b: 2};
+  obj: any = {a: 1, b: 2};
 
   get textContent(): string {
     return this.container.nativeElement.textContent;

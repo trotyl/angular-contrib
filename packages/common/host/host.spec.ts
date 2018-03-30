@@ -6,12 +6,12 @@ function classListOf(element: HTMLElement): string[] {
   return Array.from(element.classList).sort();
 }
 
-function stylesOf(element: HTMLElement): object {
-  return element.style;
+function stylesOf(element: HTMLElement): {[key: string]: string} {
+  return element.style as any;
 }
 
-function attributesOf(element: HTMLElement): object {
-  const res = {};
+function attributesOf(element: HTMLElement): {[key: string]: string} {
+  const res: {[key: string]: string} = {};
   for (let i = 0; i < element.attributes.length; i++) {
     res[element.attributes[i].name] = element.attributes[i].value;
   }
