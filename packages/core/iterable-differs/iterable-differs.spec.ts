@@ -1,5 +1,6 @@
 import { IterableDiffer, IterableDiffers, IterableDifferFactory } from '@angular/core';
 import { async, inject, TestBed } from '@angular/core/testing';
+import { ITERABLE_DIFFER_FACTORIES } from './iterable-differs';
 import { IterableDiffersModule } from './iterable-differs.module';
 
 describe('IterableDiffers Extensibility', () => {
@@ -14,7 +15,10 @@ describe('IterableDiffers Extensibility', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [IterableDiffersModule.extend([spyIterableDifferFactory])],
+      imports: [IterableDiffersModule],
+      providers: [
+        { provide: ITERABLE_DIFFER_FACTORIES, multi: true, useValue: spyIterableDifferFactory },
+      ],
     }).compileComponents();
   }));
 

@@ -16,15 +16,16 @@ Supports extending `IterableDiffers` with custom differ implementations.
 
 ## Usage
 
-Providing custom `IterableDifferFactory`:
+Provding custom `IterableDifferFactory` (Non-exclusive):
 
 ```typescript
-import { IterableDiffersModule } from '@angular-contrib/core';
-
-const customIterableDifferFactories = [ FastDifferFactory ];
+import { IterableDiffersModule, ITERABLE_DIFFER_FACTORIES } from '@angular-contrib/core';
 
 @NgModule({
-  imports: [ IterableDiffersModule.extend(customIterableDifferFactories) ],
+  imports: [ IterableDiffersModule ],
+  providers: [
+    { provide: ITERABLE_DIFFER_FACTORIES, multi: true, useClass: FastDifferFactory },
+  ]
 })
 class MyModule { }
 ```

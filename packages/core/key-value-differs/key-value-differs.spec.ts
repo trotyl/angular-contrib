@@ -1,5 +1,6 @@
 import { KeyValueDiffer, KeyValueDiffers, KeyValueDifferFactory } from '@angular/core';
 import { async, inject, TestBed } from '@angular/core/testing';
+import { KEY_VALUE_DIFFER_FACTORIES } from './key-value-differs';
 import { KeyValueDiffersModule } from './key-value-differs.module';
 
 describe('KeyValueDiffers Extensibility', () => {
@@ -14,7 +15,10 @@ describe('KeyValueDiffers Extensibility', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [KeyValueDiffersModule.extend([spyKeyValueDifferFactory])],
+      imports: [KeyValueDiffersModule],
+      providers: [
+        { provide: KEY_VALUE_DIFFER_FACTORIES, multi: true, useValue: spyKeyValueDifferFactory },
+      ],
     }).compileComponents();
   }));
 

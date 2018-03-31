@@ -16,15 +16,16 @@ Supports extending `KeyValueDiffers` with custom differ implementations.
 
 ## Usage
 
-Providing custom `KeyValueDifferFactory`:
+Provding custom `KeyValueDifferFactory` (Non-exclusive):
 
 ```typescript
-import { KeyValueDiffersModule } from '@angular-contrib/core';
-
-const customKeyValueDifferFactories = [ FastDifferFactory ];
+import { KeyValueDiffersModule, KEY_VALUE_DIFFER_FACTORIES } from '@angular-contrib/core';
 
 @NgModule({
-  imports: [ KeyValueDiffersModule.extend(customKeyValueDifferFactories) ],
+  imports: [ KeyValueDiffersModule ],
+  providers: [
+    { provide: KEY_VALUE_DIFFER_FACTORIES, multi: true, useClass: FastDifferFactory },
+  ]
 })
 class MyModule { }
 ```
