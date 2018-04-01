@@ -33,4 +33,4 @@ platformBrowserDynamic.bootstrapModule(MyModule, { ngZone: 'noop' });
 
 ## Requirements
 
-+ WeakSet;
++ WeakMap;
