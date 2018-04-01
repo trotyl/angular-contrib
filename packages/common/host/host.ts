@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Renderer2, RendererStyleFlags2 } from '@angular/core';
 
-const NG_HOST_ELEMENTS = '__ng_contrib_host_elements__';
+const NG_HOST_ELEMENTS = new WeakMap<Renderer2, WeakSet<Element>>();
 
 @Directive({
   selector: 'ng-host',
@@ -9,12 +9,12 @@ export class NgHost {
   constructor(element: ElementRef, renderer: Renderer2) {
     transferInitialAttributes(renderer, element.nativeElement);
 
-    if (!(renderer as any)[NG_HOST_ELEMENTS]) {
-      (renderer as any)[NG_HOST_ELEMENTS] = new WeakSet<Element>();
+    if (!NG_HOST_ELEMENTS.has(renderer)) {
+      NG_HOST_ELEMENTS.set(renderer, new WeakSet<Element>());
       interceptRenderer(renderer);
     }
 
-    (renderer as any)[NG_HOST_ELEMENTS].add(element.nativeElement);
+    NG_HOST_ELEMENTS.get(renderer)!.add(element.nativeElement);
   }
 }
 
@@ -81,8 +81,8 @@ function interceptRenderer(renderer: Renderer2): void {
 
 function targetOf(renderer: Renderer2, node: string | any): any {
   if (typeof node !== 'string' &&
-      (renderer as any)[NG_HOST_ELEMENTS] instanceof WeakSet &&
-      (renderer as any)[NG_HOST_ELEMENTS].has(node)) {
+      NG_HOST_ELEMENTS.has(renderer) &&
+      NG_HOST_ELEMENTS.get(renderer)!.has(node)) {
     return renderer.parentNode(node);
   }
   return node;

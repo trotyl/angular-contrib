@@ -36,3 +36,8 @@ class MyComponent { }
 + The `<ng-host>` element must be direct child of component;
 + Content projection for `<ng-host>` element is meaningless and not supported;
 + Event binding are not supported for now due to technically limitation;
+
+## Requirements
+
++ WeakMap;
++ WeakSet;
