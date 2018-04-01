@@ -4,10 +4,14 @@ Angular extensions powered by community.
 
 ## Packages
 
-Package Name              | Features
-------------------------- | -------------------------------------------
-`@angular-contrib/core`   | [`IterableDiffers.extend`][IterableDiffersExtensibility], [`KeyValueDiffers.extend`][KeyValueDiffersExtensibility]
-`@angular-contrib/common` | [`<ng-host>`][NgHost], [`ngForIn`][NgForIn], [`ngSwitchCaseContinue`][NgSwitchContinue]
++ `@angular-contrib/core`
+  + [Change Detection Scheduler][ChangeDetectionScheduler]
+  + [IterableDiffers Extensibility][IterableDiffersExtensibility]
+  + [KeyValueDiffers Extensibility][KeyValueDiffersExtensibility]
++ `@angular-contrib/common`
+  + [`<ng-host>`][NgHost]
+  + [`ngForIn`][NgForIn]
+  + [`ngSwitchCaseContinue`][NgSwitchContinue]
 
 ## Usage
 
@@ -55,6 +59,7 @@ class AppComponent { }
 + Any feature once implemented by Angular will be deprecated here;
 
 
+[ChangeDetectionScheduler]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/change-detection-scheduler
 [IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/iterable-differs
 [KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/key-value-differs
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in

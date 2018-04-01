@@ -29,4 +29,8 @@ platformBrowserDynamic.bootstrapModule(MyModule, { ngZone: 'noop' });
 
 ## Note
 
-+ Depends on `markForCheck` integration like event binding, async pipe;
++ Depends on `markForCheck` integration like async pipe;
+
+## Requirements
+
++ WeakMap;
