@@ -1,5 +1,6 @@
 import { ApplicationRef, ChangeDetectorRef, Component, Injectable, NgZone } from '@angular/core';
 
+const SCHEDULER_PATCHED = new WeakSet<ChangeDetectorRef>();
 let tickScheduled = false;
 
 export abstract class ChangeDetectionScheduler {
@@ -36,9 +37,13 @@ export class ChangeDetectionSchedulerInitializer {
       cdRef = cdRef.constructor.prototype;
     }
 
-    cdRef.markForCheck = function () {
-      markForCheck.call(this);
-      scheduleTickIfNeeded();
-    };
+    if (!SCHEDULER_PATCHED.has(cdRef)) {
+      cdRef.markForCheck = function () {
+        markForCheck.call(this);
+        scheduleTickIfNeeded();
+      };
+
+      SCHEDULER_PATCHED.add(cdRef);
+    }
   }
 }
