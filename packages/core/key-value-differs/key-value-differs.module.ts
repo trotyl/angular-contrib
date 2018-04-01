@@ -1,4 +1,4 @@
-import { Inject, KeyValueDiffers, KeyValueDifferFactory, ModuleWithProviders, NgModule } from '@angular/core';
+import { Inject, KeyValueDiffers, KeyValueDifferFactory, NgModule } from '@angular/core';
 import { KEY_VALUE_DIFFER_FACTORIES } from './key-value-differs';
 
 @NgModule()

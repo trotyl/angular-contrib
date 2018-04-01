@@ -5,7 +5,7 @@
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
-    "class-name": true,
+    "class-name": false,
     "comment-format": [
       true,
       "check-space"

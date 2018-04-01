@@ -1,4 +1,4 @@
-import { Inject, IterableDiffers, IterableDifferFactory, ModuleWithProviders, NgModule } from '@angular/core';
+import { Inject, IterableDiffers, IterableDifferFactory, NgModule } from '@angular/core';
 import { ITERABLE_DIFFER_FACTORIES } from './iterable-differs';
 
 @NgModule()
