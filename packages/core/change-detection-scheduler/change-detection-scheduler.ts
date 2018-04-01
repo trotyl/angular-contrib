@@ -40,7 +40,5 @@ export class ChangeDetectionSchedulerInitializer {
       markForCheck.call(this);
       scheduleTickIfNeeded();
     };
-
-    scheduleTickIfNeeded();
   }
 }

@@ -45,13 +45,9 @@ describe('ChangeDetectionScheduler', () => {
     component = fixture.componentInstance;
   });
 
-  it('should perform change detection in startup', inject([ChangeDetectionScheduler], (scheduler: ChangeDetectionScheduler) => {
-    expect(scheduler.schedule).toHaveBeenCalledTimes(1);
-  }));
-
-  it('should perform change detection after events', inject([ChangeDetectionScheduler], (scheduler: ChangeDetectionScheduler) => {
+  it('should perform change detection after markForCheck', inject([ChangeDetectionScheduler], (scheduler: ChangeDetectionScheduler) => {
     component.changeDetectorRef.markForCheck();
-    expect(scheduler.schedule).toHaveBeenCalledTimes(2);
+    expect(scheduler.schedule).toHaveBeenCalled();
   }));
 });
 
