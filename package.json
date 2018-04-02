@@ -10,7 +10,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:core": "ng-packagr -p packages/core/package.json",
-    "build:common": "ng-packagr -p packages/common/package.json"
+    "build:common": "ng-packagr -p packages/common/package.json",
+    "build:all": "npm run build:core && npm run build:common",
+    "publish:core": "cd publish/core && npm publish",
+    "publish:common": "cd publish/common && npm publish",
+    "publish:all": "npm run publish:core && npm run publish:common"
   },
   "private": true,
   "dependencies": {
