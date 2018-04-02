@@ -11,6 +11,7 @@ Angular extensions powered by community.
 + `@angular-contrib/common`
   + [`<ng-host>`][NgHost]
   + [`ngForIn`][NgForIn]
+  + [`ngNoCheck`][NgNoCheck]
   + [`ngSwitchCaseContinue`][NgSwitchContinue]
 
 ## Usage
@@ -63,5 +64,6 @@ class AppComponent { }
 [IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/iterable-differs
 [KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/key-value-differs
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in
+[NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/no-check
 [NgHost]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/host
 [NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/switch-continue
