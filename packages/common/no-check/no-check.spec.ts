@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
 import { async, fakeAsync, tick, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgNoCheck } from './no-check';
 import { NoCheckModule } from './no-check.module';
