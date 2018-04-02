@@ -1,3 +1,7 @@
+[![CircleCI](https://img.shields.io/circleci/project/github/trotyl/angular-contrib.svg)](https://circleci.com/gh/trotyl/angular-contrib)
+[![Codecov](https://img.shields.io/codecov/c/github/trotyl/angular-contrib.svg)](https://codecov.io/gh/trotyl/angular-contrib)
+
+
 # Angular Contrib
 
 Angular extensions powered by community.
