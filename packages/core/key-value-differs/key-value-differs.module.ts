@@ -7,6 +7,6 @@ export class KeyValueDiffersModule {
     keyValueDiffers: KeyValueDiffers,
     @Inject(KEY_VALUE_DIFFER_FACTORIES) extraKeyValueDifferFactories: KeyValueDifferFactory[],
   ) {
-    keyValueDiffers.factories.splice(0, 0, ...extraKeyValueDifferFactories);
+    keyValueDiffers.factories.unshift(...extraKeyValueDifferFactories.reverse());
   }
 }
