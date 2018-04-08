@@ -114,6 +114,39 @@ describe('NgNoCheck with notifier', () => {
     component.emitter.emit();
     expect(fixture.nativeElement.textContent).toBe('1-1');
   }));
+
+  it('should support changing notifier', fakeAsync(() => {
+    fixture.detectChanges();
+    component.scheduleChange();
+    tick(1000);
+
+    const oldEmitter = component.emitter;
+    component.emitter = new EventEmitter<void>();
+
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toBe('1-0');
+
+    oldEmitter.emit();
+    expect(fixture.nativeElement.textContent).toBe('1-0');
+
+    component.emitter.emit();
+    expect(fixture.nativeElement.textContent).toBe('1-1');
+  }));
+
+  it('should support removing notifier', fakeAsync(() => {
+    fixture.detectChanges();
+    component.scheduleChange();
+    tick(1000);
+
+    const oldEmitter = component.emitter;
+    component.emitter = null!;
+
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toBe('1-0');
+
+    oldEmitter.emit();
+    expect(fixture.nativeElement.textContent).toBe('1-0');
+  }));
 });
 
 @Component({
