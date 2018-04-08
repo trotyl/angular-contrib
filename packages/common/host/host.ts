@@ -50,32 +50,32 @@ function interceptRenderer(renderer: Renderer2): void {
   const setProperty = renderer.setProperty;
   const setStyle = renderer.setStyle;
 
-  renderer.addClass = function (el: any, name: string): void {
-    addClass.call(this, targetOf(this, el), name);
+  renderer.addClass = function (el: any, ...restArgs: any[]): void {
+    addClass.call(this, targetOf(this, el), ...restArgs);
   };
 
-  renderer.removeAttribute = function (el: any, name: string, namespace?: string | null): void {
-    removeAttribute.call(this, targetOf(this, el), name, namespace);
+  renderer.removeAttribute = function (el: any, ...restArgs: any[]): void {
+    removeAttribute.call(this, targetOf(this, el), name, ...restArgs);
   };
 
-  renderer.removeClass = function (el: any, name: string): void {
-    removeClass.call(this, targetOf(this, el), name);
+  renderer.removeClass = function (el: any, ...restArgs: any[]): void {
+    removeClass.call(this, targetOf(this, el), ...restArgs);
   };
 
-  renderer.removeStyle = function (el: any, style: string, flags?: RendererStyleFlags2): void {
-    removeStyle.call(this, targetOf(this, el), style, flags);
+  renderer.removeStyle = function (el: any, ...restArgs: any[]): void {
+    removeStyle.call(this, targetOf(this, el), ...restArgs);
   };
 
-  renderer.setAttribute = function (el: any, name: string, value: string, namespace?: string | null): void {
-    setAttribute.call(this, targetOf(this, el), name, value, namespace);
+  renderer.setAttribute = function (el: any, ...restArgs: any[]): void {
+    setAttribute.call(this, targetOf(this, el), ...restArgs);
   };
 
-  renderer.setProperty = function (el: any, name: string, value: any): void {
-    setProperty.call(this, targetOf(this, el), name, value);
+  renderer.setProperty = function (el: any, ...restArgs: any[]): void {
+    setProperty.call(this, targetOf(this, el), ...restArgs);
   };
 
-  renderer.setStyle = function (el: any, style: string, value: any, flags?: RendererStyleFlags2): void {
-    setStyle.call(this, targetOf(this, el), style, value, flags);
+  renderer.setStyle = function (el: any, ...restArgs: any[]): void {
+    setStyle.call(this, targetOf(this, el), ...restArgs);
   };
 }
 
