@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, NgZone } from '@angular/core';
+import { ApplicationRef, ChangeDetectorRef, Component, EventEmitter, NgZone } from '@angular/core';
 import { async, inject, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChangeDetectionScheduler } from './change-detection-scheduler';
 import { ChangeDetectionSchedulerModule } from './change-detection-scheduler.module';
@@ -44,6 +44,10 @@ describe('ChangeDetectionScheduler', () => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
   });
+
+  beforeEach(inject([ApplicationRef], (appRef: ApplicationRef) => {
+    appRef.tick();
+  }));
 
   it('should perform change detection after markForCheck', inject([ChangeDetectionScheduler], (scheduler: ChangeDetectionScheduler) => {
     component.changeDetectorRef.markForCheck();

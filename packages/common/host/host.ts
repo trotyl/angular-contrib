@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 const NG_HOST_ELEMENTS = new WeakMap<Renderer2, WeakSet<Element>>();
 

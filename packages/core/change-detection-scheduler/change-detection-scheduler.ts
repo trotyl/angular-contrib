@@ -1,7 +1,8 @@
 import { ApplicationRef, ChangeDetectorRef, Component, Injectable, NgZone } from '@angular/core';
 
-const SCHEDULER_PATCHED = new WeakMap<ChangeDetectorRef, ApplicationRef>();
-const ORIGINAL_MARK_FOR_CHECK = '__markForCheck__';
+const APPLICTIONS = new WeakMap<ChangeDetectorRef, ApplicationRef>();
+const SCHEDULERS = new WeakMap<ApplicationRef, ChangeDetectionScheduler>();
+const PATCHED = new WeakSet<Function>();
 let tickScheduled = false;
 
 export abstract class ChangeDetectionScheduler {
@@ -26,22 +27,56 @@ export class ChangeDetectionScheduler_ implements ChangeDetectionScheduler {
 })
 export class ChangeDetectionSchedulerInitializer {
   constructor(appRef: ApplicationRef, cdRef: ChangeDetectorRef, ngZone: NgZone, scheduler: ChangeDetectionScheduler) {
-    while (typeof cdRef === 'object' && !cdRef.hasOwnProperty('markForCheck') && cdRef.constructor.prototype) {
-      cdRef = cdRef.constructor.prototype;
+    if (!SCHEDULERS.has(appRef)) {
+      interceptApplicationRef(appRef);
+      SCHEDULERS.set(appRef, scheduler);
     }
 
-    if (!SCHEDULER_PATCHED.has(cdRef) || SCHEDULER_PATCHED.get(cdRef) !== appRef) {
-      if ((cdRef as any)[ORIGINAL_MARK_FOR_CHECK] == null) {
-        (cdRef as any)[ORIGINAL_MARK_FOR_CHECK] = cdRef.markForCheck;
-      }
-      cdRef.markForCheck = function () {
-        (cdRef as any)[ORIGINAL_MARK_FOR_CHECK].call(this);
-        if (!(ngZone instanceof NgZone) && !tickScheduled) {
-          scheduler.schedule();
-        }
-      };
-
-      SCHEDULER_PATCHED.set(cdRef, appRef);
+    if (!PATCHED.has(cdRef.checkNoChanges)) {
+      interceptChangeDetectorRef(cdRef);
+      PATCHED.add(cdRef.checkNoChanges);
     }
   }
+}
+
+let activeApp: ApplicationRef | null = null;
+let lastActiveApp: ApplicationRef | null = null;
+
+function interceptApplicationRef(appRef: ApplicationRef): void {
+  const tick = appRef.tick;
+
+  appRef.tick = function () {
+    activeApp = lastActiveApp = this;
+    tick.call(this);
+    activeApp = null;
+  };
+}
+
+function interceptChangeDetectorRef(cdRef: ChangeDetectorRef): void {
+  const detectChanges = cdRef.detectChanges;
+  const markForCheck = cdRef.markForCheck;
+
+  let proto = cdRef;
+  while (proto !== Object.prototype) {
+    if (proto.hasOwnProperty('markForCheck')) {
+      break;
+    }
+    proto = (proto as any).__proto__;
+  }
+
+  proto.detectChanges = function () {
+    if (!APPLICTIONS.has(this) && activeApp != null) {
+      APPLICTIONS.set(this, activeApp);
+    }
+    detectChanges.call(this);
+  };
+
+  proto.markForCheck = function () {
+    const appRef = APPLICTIONS.has(this) ? APPLICTIONS.get(this)! : lastActiveApp;
+    if (appRef != null && SCHEDULERS.has(appRef)) {
+      const scheduler = SCHEDULERS.get(appRef)!;
+      scheduler.schedule();
+    }
+    markForCheck.call(this);
+  };
 }
