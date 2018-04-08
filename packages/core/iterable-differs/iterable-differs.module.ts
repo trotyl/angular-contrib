@@ -7,6 +7,6 @@ export class IterableDiffersModule {
     iterableDiffers: IterableDiffers,
     @Inject(ITERABLE_DIFFER_FACTORIES) extraIterableDifferFactories: IterableDifferFactory[],
   ) {
-    iterableDiffers.factories.unshift(...extraIterableDifferFactories.reverse());
+    iterableDiffers.factories.unshift(...extraIterableDifferFactories.slice().reverse());
   }
 }
