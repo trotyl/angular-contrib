@@ -57,6 +57,7 @@ platformBrowserDynamic.bootstrapModule(MyModule, { ngZone: 'noop' });
 ## Note
 
 + Depends on `markForCheck` integration like async pipe;
++ When multiple applications bootstrapped, would only schedule change detection for last ticked application due to technically limitation (except for `markForCheck` from root views);
 
 ## Requirements
 
