@@ -12,6 +12,7 @@ Angular extensions powered by community.
   + [Change Detection Scheduler][ChangeDetectionScheduler]
   + [IterableDiffers Extensibility][IterableDiffersExtensibility]
   + [KeyValueDiffers Extensibility][KeyValueDiffersExtensibility]
+  + [`FastIterableDiffer`][FastIterableDiffer]
 + `@angular-contrib/common`
   + [`<ng-host>`][NgHost]
   + [`ngForIn`][NgForIn]
@@ -65,6 +66,7 @@ class AppComponent { }
 
 
 [ChangeDetectionScheduler]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/change-detection-scheduler
+[FastIterableDiffer]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/fast-iterable-differ
 [IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/iterable-differs
 [KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/key-value-differs
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in
