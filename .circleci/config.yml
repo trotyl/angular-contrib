@@ -23,6 +23,14 @@ jobs:
         
       - run: yarn build:all
 
+      - store_artifacts:
+          path: ./publish/core/bundles/angular-contrib-core.umd.min.js
+          destination: core.umd.min.js
+
+      - store_artifacts:
+          path: ./publish/common/bundles/angular-contrib-common.umd.min.js
+          destination: common.umd.min.js
+
   test:
     docker:
       - image: circleci/node:8.9-browsers
