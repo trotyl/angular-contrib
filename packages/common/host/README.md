@@ -12,7 +12,7 @@ Helper directive for using `NgClass` and `NgStyle` on host element.
 
 ## NgModule
 
-`@angular-contrib/common#HostModule`
+`@angular-contrib/common#ContribNgHostModule`
 
 ## Usage
 

@@ -5,4 +5,4 @@ import { NgHost } from './host';
   declarations: [ NgHost ],
   exports: [ NgHost ],
 })
-export class HostModule { }
+export class ContribNgHostModule { }

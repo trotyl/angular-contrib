@@ -33,10 +33,10 @@ npm install @angular-contrib/common
 Importing NgModule:
 
 ```typescript
-import { HostModule } from '@angular-contrib/common';
+import { ContribNgHostModule } from '@angular-contrib/common';
 
 @NgModule({
-  imports: [ HostModule ]
+  imports: [ ContribNgHostModule ]
 })
 class AppModule { }
 ```
