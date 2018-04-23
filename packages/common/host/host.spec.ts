@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostBinding, ViewChild } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HostModule } from './host.module';
+import { ContribNgHostModule } from './host.module';
 
 function classListOf(element: HTMLElement): string[] {
   return Array.from(element.classList).sort();
@@ -25,7 +25,7 @@ describe('NgHost', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [HostModule],
+      imports: [ContribNgHostModule],
     }).compileComponents();
   }));
 
@@ -85,7 +85,7 @@ describe('NgHost with HostBinding', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponentWithHost],
-      imports: [HostModule],
+      imports: [ContribNgHostModule],
     }).compileComponents();
   }));
 

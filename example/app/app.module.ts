@@ -1,4 +1,4 @@
-import { ContribNgForInModule, HostModule } from '@angular-contrib/common';
+import { ContribNgForInModule, ContribNgHostModule } from '@angular-contrib/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ContribNgForInModule,
-    HostModule,
+    ContribNgHostModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
