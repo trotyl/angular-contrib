@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { InitModule } from './init.module';
+import { ContribNgInitModule } from './init.module';
 
 describe('ngForIn', () => {
   let fixture: ComponentFixture<TestComponent>;
@@ -9,7 +9,7 @@ describe('ngForIn', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [InitModule],
+      imports: [ContribNgInitModule],
     }).compileComponents();
   }));
 

@@ -12,7 +12,7 @@ Alternative to `NgForOf` for objects or maps.
 
 ## NgModule
 
-`@angular-contrib/common#ForInModule`
+`@angular-contrib/common#ContribNgForInModule`
 
 ## Usage
 

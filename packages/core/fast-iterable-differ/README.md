@@ -12,13 +12,13 @@ An optimized `IterableDiffer` inspired by [Inferno](https://github.com/infernojs
 
 ## NgModule
 
-`@angular-contrib/core#FastIterableDifferModule`
+`@angular-contrib/core#ContribFastIterableDifferModule`
 
 ## Usage
 
 ```typescript
 @NgModule({
-  imports: [ FastIterableDifferModule ],
+  imports: [ ContribFastIterableDifferModule ],
 })
 class MyModule { }
 ```

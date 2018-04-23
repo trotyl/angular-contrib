@@ -12,17 +12,17 @@ Automatically trigger change detection without Zone.js.
 
 ## NgModule
 
-`@angular-contrib/core#ChangeDetectionSchedulerModule`
+`@angular-contrib/core#ContribChangeDetectionSchedulerModule`
 
 ## Usage
 
 Using default scheduler (based on `Promise.then()`):
 
 ```typescript
-import { ChangeDetectionSchedulerModule } from '@angular-contrib/core';
+import { ContribChangeDetectionSchedulerModule } from '@angular-contrib/core';
 
 @NgModule({
-  imports: [ ChangeDetectionSchedulerModule ],
+  imports: [ ContribChangeDetectionSchedulerModule ],
 })
 class MyModule { }
 
@@ -32,7 +32,7 @@ platformBrowserDynamic.bootstrapModule(MyModule, { ngZone: 'noop' });
 Providing custom scheduler:
 
 ```typescript
-import { ChangeDetectionScheduler, ChangeDetectionSchedulerModule } from '@angular-contrib/core';
+import { ChangeDetectionScheduler, ContribChangeDetectionSchedulerModule } from '@angular-contrib/core';
 
 @Injectable()
 class ImmediateTickScheduler implements ChangeDetectionScheduler {
@@ -44,7 +44,7 @@ class ImmediateTickScheduler implements ChangeDetectionScheduler {
 }
 
 @NgModule({
-  imports: [ ChangeDetectionSchedulerModule ],
+  imports: [ ContribChangeDetectionSchedulerModule ],
   providers: [
     { provide: ChangeDetectionScheduler, useClass: ImmediateTickScheduler },
   ],

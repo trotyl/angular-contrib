@@ -12,7 +12,7 @@ Helper directive to perform side-effects in template.
 
 ## NgModule
 
-`@angular-contrib/core#InitModule`
+`@angular-contrib/core#ContribNgInitModule`
 
 ## Usage
 

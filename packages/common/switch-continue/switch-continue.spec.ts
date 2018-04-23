@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { SwitchContinueModule } from './switch-continue.module';
+import { ContribNgSwitchContinueModule } from './switch-continue.module';
 
 describe('ngSwitchCaseContinue', () => {
   let fixture: ComponentFixture<TestComponent>;
@@ -10,7 +10,7 @@ describe('ngSwitchCaseContinue', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [CommonModule, SwitchContinueModule],
+      imports: [CommonModule, ContribNgSwitchContinueModule],
     }).compileComponents();
   }));
 

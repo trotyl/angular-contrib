@@ -12,7 +12,7 @@ Helper directive for matching multiple cases in `NgSwitch`.
 
 ## NgModule
 
-`@angular-contrib/common#SwitchContinueModule`
+`@angular-contrib/common#ContribNgSwitchContinueModule`
 
 ## Usage
 

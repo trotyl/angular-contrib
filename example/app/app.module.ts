@@ -1,4 +1,4 @@
-import { ForInModule, HostModule } from '@angular-contrib/common';
+import { ContribNgForInModule, HostModule } from '@angular-contrib/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ForInModule,
+    ContribNgForInModule,
     HostModule,
   ],
   providers: [],

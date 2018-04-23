@@ -5,4 +5,4 @@ import { NgInit } from './init';
   declarations: [ NgInit ],
   exports: [ NgInit ],
 })
-export class InitModule { }
+export class ContribNgInitModule { }

@@ -7,4 +7,4 @@ import { NgForIn } from './for-in';
   imports: [ CommonModule ],
   exports: [ NgForIn ],
 })
-export class ForInModule { }
+export class ContribNgForInModule { }

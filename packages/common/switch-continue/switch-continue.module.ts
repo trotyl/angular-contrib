@@ -5,4 +5,4 @@ import { NgSwitchCasePatcher, NgSwitchDefaultPatcher, NgSwitchPatcher } from './
   declarations: [ NgSwitchPatcher, NgSwitchCasePatcher, NgSwitchDefaultPatcher ],
   exports: [ NgSwitchPatcher, NgSwitchCasePatcher, NgSwitchDefaultPatcher ],
 })
-export class SwitchContinueModule { }
+export class ContribNgSwitchContinueModule { }
