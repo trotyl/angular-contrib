@@ -17,7 +17,9 @@ export class NgForIn extends NgForOf<string> implements DoCheck, OnChanges {
       changes['ngForOf'] = new SimpleChange(this.previousKeys, keys, change.isFirstChange());
       this.previousKeys = keys;
     }
-    super.ngOnChanges(changes);
+    if (super.ngOnChanges) {
+      super.ngOnChanges(changes);
+    }
   }
 
   ngDoCheck(): void {
