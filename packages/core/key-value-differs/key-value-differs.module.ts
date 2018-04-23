@@ -2,7 +2,7 @@ import { Inject, KeyValueDiffers, KeyValueDifferFactory, NgModule } from '@angul
 import { KEY_VALUE_DIFFER_FACTORIES } from './key-value-differs';
 
 @NgModule()
-export class KeyValueDiffersModule {
+export class ContribKeyValueDiffersModule {
   constructor(
     keyValueDiffers: KeyValueDiffers,
     @Inject(KEY_VALUE_DIFFER_FACTORIES) extraKeyValueDifferFactories: KeyValueDifferFactory[],

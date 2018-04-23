@@ -5,4 +5,4 @@ import { NgNoCheck } from './no-check';
   declarations: [ NgNoCheck ],
   exports: [ NgNoCheck ],
 })
-export class NoCheckModule { }
+export class ContribNgNoCheckModule { }

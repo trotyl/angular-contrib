@@ -12,17 +12,17 @@ Supports extending `KeyValueDiffers` with custom differ implementations.
 
 ## NgModule
 
-`@angular-contrib/core#KeyValueDiffersModule`
+`@angular-contrib/core#ContribKeyValueDiffersModule`
 
 ## Usage
 
 Provding custom `KeyValueDifferFactory` (Non-exclusive):
 
 ```typescript
-import { KeyValueDiffersModule, KEY_VALUE_DIFFER_FACTORIES } from '@angular-contrib/core';
+import { ContribKeyValueDiffersModule, KEY_VALUE_DIFFER_FACTORIES } from '@angular-contrib/core';
 
 @NgModule({
-  imports: [ KeyValueDiffersModule ],
+  imports: [ ContribKeyValueDiffersModule ],
   providers: [
     { provide: KEY_VALUE_DIFFER_FACTORIES, multi: true, useClass: FastDifferFactory },
   ]

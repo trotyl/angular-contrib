@@ -1,7 +1,7 @@
 import { Component, EventEmitter, ViewChild } from '@angular/core';
 import { async, fakeAsync, tick, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgNoCheck } from './no-check';
-import { NoCheckModule } from './no-check.module';
+import { ContribNgNoCheckModule } from './no-check.module';
 
 describe('NgNoCheck', () => {
   let fixture: ComponentFixture<TestComponent>;
@@ -10,7 +10,7 @@ describe('NgNoCheck', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [NoCheckModule],
+      imports: [ContribNgNoCheckModule],
     }).compileComponents();
   }));
 
@@ -38,7 +38,7 @@ describe('NgNoCheck with condition', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponentWithCondition],
-      imports: [NoCheckModule],
+      imports: [ContribNgNoCheckModule],
     }).compileComponents();
   }));
 
@@ -65,7 +65,7 @@ describe('NgNoCheck with manual trigger', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponentWithTrigger],
-      imports: [NoCheckModule],
+      imports: [ContribNgNoCheckModule],
     }).compileComponents();
   }));
 
@@ -94,7 +94,7 @@ describe('NgNoCheck with notifier', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponentWithNotifier],
-      imports: [NoCheckModule],
+      imports: [ContribNgNoCheckModule],
     }).compileComponents();
   }));
 

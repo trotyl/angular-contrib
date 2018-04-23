@@ -1,7 +1,7 @@
 import { ApplicationRef, ChangeDetectorRef, Component, EventEmitter, NgZone } from '@angular/core';
 import { async, inject, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChangeDetectionScheduler } from './change-detection-scheduler';
-import { ChangeDetectionSchedulerModule } from './change-detection-scheduler.module';
+import { ContribChangeDetectionSchedulerModule } from './change-detection-scheduler.module';
 
 describe('ChangeDetectionScheduler', () => {
   let fixture: ComponentFixture<TestComponent>;
@@ -32,7 +32,7 @@ describe('ChangeDetectionScheduler', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [ChangeDetectionSchedulerModule],
+      imports: [ContribChangeDetectionSchedulerModule],
       providers: [
         { provide: NgZone, useValue: dummyNoopNgZone },
         { provide: ChangeDetectionScheduler, useValue: mockScheduler },

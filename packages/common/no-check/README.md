@@ -12,7 +12,7 @@ Disable automatical change detection for certain fragments.
 
 ## NgModule
 
-`@angular-contrib/common#NoCheckModule`
+`@angular-contrib/common#ContribNgNoCheckModule`
 
 ## Usage
 

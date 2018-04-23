@@ -8,7 +8,7 @@ import { ChangeDetectionScheduler, ChangeDetectionScheduler_, ChangeDetectionSch
     { provide: ChangeDetectionScheduler, useClass: ChangeDetectionScheduler_ },
   ],
 })
-export class ChangeDetectionSchedulerModule {
+export class ContribChangeDetectionSchedulerModule {
   constructor(cfResolver: ComponentFactoryResolver, injector: Injector, rendererFactory: RendererFactory2) {
     const componentFactory = cfResolver.resolveComponentFactory(ChangeDetectionSchedulerInitializer);
     const renderer = rendererFactory.createRenderer(null, null);
