@@ -1,6 +1,5 @@
 import { IterableChangeRecord } from '@angular/core';
 import { Container, ItemNode, Operation } from './definitions';
-import { looseIdentical } from './utils';
 
 export class DiffContainer implements Container {
   operations: Operation[] = [];
@@ -91,7 +90,7 @@ export class DiffContainer implements Container {
 
   checkIdentity(lastNode: ItemNode, newNode: ItemNode): void {
     this.assertActive(lastNode);
-    if (!looseIdentical(lastNode.item, newNode.item)) {
+    if (!Object.is(lastNode.item, newNode.item)) {
       this.identityChanges.push({
         item: newNode.item,
         trackById: newNode.key,

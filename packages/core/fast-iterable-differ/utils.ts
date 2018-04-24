@@ -1,7 +1,3 @@
-export function looseIdentical(a: any, b: any): boolean {
-  return a === b || typeof a === 'number' && typeof b === 'number' && isNaN(a) && isNaN(b);
-}
-
 export function stringify(token: any): string {
   if (typeof token === 'string') {
     return token;
