@@ -1,7 +1,6 @@
 // Diffing instructions inspired by inferno (https://github.com/infernojs/inferno)
 
 import { Container, ItemNode } from './definitions';
-import { looseIdentical } from './utils';
 
 export function patchChildren(container: Container, lastChildren: ItemNode[], nextChildren: ItemNode[], keyed: boolean) {
   const lastLength = lastChildren.length;
@@ -56,7 +55,7 @@ function patchKeyedChildren(container: Container, a: ItemNode[], b: ItemNode[], 
   // tslint:disable-next-line
   outer: {
     // Sync nodes with the same key at the beginning.
-    while (looseIdentical(aNode.key, bNode.key)) {
+    while (Object.is(aNode.key, bNode.key)) {
       patchItem(container, aNode, bNode);
       aStart++;
       bStart++;
@@ -71,7 +70,7 @@ function patchKeyedChildren(container: Container, a: ItemNode[], b: ItemNode[], 
     bNode = b[bEnd];
 
     // Sync nodes with the same key at the end.
-    while (looseIdentical(aNode.key, bNode.key)) {
+    while (Object.is(aNode.key, bNode.key)) {
       patchItem(container, aNode, bNode);
       aEnd--;
       bEnd--;
@@ -117,7 +116,7 @@ function patchKeyedChildren(container: Container, a: ItemNode[], b: ItemNode[], 
         if (patched < bLeft) {
           for (j = bStart; j <= bEnd; j++) {
             bNode = b[j];
-            if (looseIdentical(aNode.key, bNode.key)) {
+            if (Object.is(aNode.key, bNode.key)) {
               sources[j - bStart] = i;
               if (canRemoveWholeContent) {
                 canRemoveWholeContent = false;

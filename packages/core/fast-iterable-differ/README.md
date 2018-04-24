@@ -32,3 +32,4 @@ class MyModule { }
 ## Requirements
 
 + Map;
++ Object.is;
