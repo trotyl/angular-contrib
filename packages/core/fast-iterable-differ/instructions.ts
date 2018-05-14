@@ -198,7 +198,7 @@ function patchKeyedChildren(container: Container, a: ItemNode[], b: ItemNode[], 
             pos = i + bStart;
             bNode = b[pos];
             nextPos = pos + 1;
-            insertOrAppend(container, bNode, nextPos < bLength ? b[nextPos] : null);
+            insertOrAppend(container, bNode, nextPos < bLength ? b[nextPos] : null, undefined, sources[i]);
           } else {
             j--;
           }
