@@ -1,3 +1,13 @@
+<a name="0.0.2"></a>
+## [0.0.2](https://github.com/trotyl/angular-contrib/compare/v0.0.1...v0.0.2) (2018-05-14)
+
+
+### Bug Fixes
+
+* **core:** properly handle swapping trailing element in FastIterableDiffer ([bdbf022](https://github.com/trotyl/angular-contrib/commit/bdbf022))
+
+
+
 <a name="0.0.1"></a>
 ## [0.0.1](https://github.com/trotyl/angular-contrib/compare/v0.0.1-alpha.11...v0.0.1) (2018-04-23)
 

@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "codecov": "codecov",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
     "build:core": "ng-packagr -p packages/core/package.json",
     "postbuild:core": "cp README.md publish/core",
     "build:common": "ng-packagr -p packages/common/package.json",
