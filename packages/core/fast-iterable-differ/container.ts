@@ -11,17 +11,24 @@ export class DiffContainer implements Container {
   }
 
   append(node: ItemNode): void {
-    this.assertInactive(node);
+    let previousIndex = null;
+    if (node.to != null) {
+      previousIndex = node.to;
+      this.remove(node, false);
+    }
     node.to = this.list.length;
+    if (node.link != null) {
+      node.link.to = this.list.length;
+    }
     this.operations.push({
       node,
-      previousIndex: null,
+      previousIndex,
       currentIndex: node.to,
     });
     this.list.push(node);
   }
 
-  remove(nodeToRemove: ItemNode): void {
+  remove(nodeToRemove: ItemNode, isOperation: boolean = true): void {
     this.assertActive(nodeToRemove);
     for (let i = nodeToRemove.to! + 1; i < this.list.length; i++) {
       const node = this.list[i];
@@ -30,15 +37,19 @@ export class DiffContainer implements Container {
         node.link.to!--;
       }
     }
-    this.operations.push({
-      node: nodeToRemove,
-      previousIndex: nodeToRemove.to,
-      currentIndex: null,
-    });
+    if (isOperation) {
+      this.operations.push({
+        node: nodeToRemove,
+        previousIndex: nodeToRemove.to,
+        currentIndex: null,
+      });
+    }
     this.list.splice(nodeToRemove.to!, 1);
-    nodeToRemove.to = null;
-    if (nodeToRemove.link != null) {
-      nodeToRemove.link.to = null;
+    if (isOperation) {
+      nodeToRemove.to = null;
+      if (nodeToRemove.link != null) {
+        nodeToRemove.link.to = null;
+      }
     }
   }
 
@@ -111,10 +122,6 @@ export class DiffContainer implements Container {
   }
 
   private assertActive(node: ItemNode): void {
-    if (node.to == null) { throw new Error(`00`); }
-  }
-
-  private assertInactive(node: ItemNode): void {
-    if (node.to != null) { throw new Error(`01`); }
+    if (node.to == null) { throw new Error(`Expected item ${node.item} to be in list`); }
   }
 }

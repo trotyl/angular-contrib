@@ -86,6 +86,23 @@ describe('FastIterableDiffer', function () {
     }));
   });
 
+  // https://github.com/krausest/js-framework-benchmark/pull/389
+  it('should handle swapping internal and trailing elements', () => {
+    const l = [1, 2, 3, 4, 5, 6];
+    differ.check(l);
+
+    const a = l[1];
+    l[1] = l[5];
+    l[5] = a;
+
+    differ.check(l);
+    expect(iterableDifferToString(differ)).toEqual(iterableChangesAsString({
+      collection: ['1', '6[5->1]', '3', '4', '5', '2[1->5]'],
+      previous: ['1', '2[1->5]', '3', '4', '5', '6[5->1]'],
+      moves: ['6[5->1]', '2[1->5]'],
+    }));
+  });
+
   it('should handle incremental swapping element', () => {
     const l = ['a', 'b', 'c'];
     differ.check(l);
