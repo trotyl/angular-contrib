@@ -1,6 +1,6 @@
 import { AfterViewChecked, Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 export interface NgNoCheckContext {
   $implicit: NgNoCheck;

@@ -1,0 +1,7 @@
+{
+  "name": "@angular-contrib/core",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^7.0.0"
+  }
+}

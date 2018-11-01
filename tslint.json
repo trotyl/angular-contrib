@@ -18,7 +18,6 @@
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs",
       "rxjs/Rx"
     ],
     "import-spacing": true,
@@ -61,12 +60,13 @@
     "no-empty-interface": true,
     "no-eval": true,
     "no-inferrable-types": [
-      false,
+      true,
       "ignore-params",
       "ignore-properties"
     ],
     "no-misused-new": true,
     "no-non-null-assertion": false,
+    "no-redundant-jsdoc": true,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
@@ -74,7 +74,6 @@
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "no-use-before-declare": false,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
@@ -85,13 +84,6 @@
       "check-else",
       "check-whitespace"
     ],
-    "ordered-imports": [
-      true,
-      {
-        "import-sources-order": "lowercase-last",
-        "named-imports-order": "lowercase-first"
-      }
-    ],
     "prefer-const": true,
     "quotemark": [
       true,
@@ -101,13 +93,6 @@
     "semicolon": [
       true,
       "always"
-    ],
-    "trailing-comma": [
-      true,
-      {
-        "multiline": "always",
-        "singleline": "never"
-      }
     ],
     "triple-equals": [
       true,
@@ -129,23 +114,9 @@
       true,
       "check-branch",
       "check-decl",
-      "check-module",
       "check-operator",
-      "check-rest-spread",
       "check-separator",
       "check-type"
-    ],
-    "directive-selector": [
-      false,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      false,
-      "element",
-      "app",
-      "kebab-case"
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
