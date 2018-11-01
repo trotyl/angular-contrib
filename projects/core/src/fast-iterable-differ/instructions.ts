@@ -97,17 +97,17 @@ function patchKeyedChildren(container: Container, a: ItemNode[], b: ItemNode[], 
       remove(container, a[aStart++]);
     }
   } else {
-    const aLeft: number = aEnd - aStart + 1;
-    const bLeft: number = bEnd - bStart + 1;
+    const aLeft = aEnd - aStart + 1;
+    const bLeft = bEnd - bStart + 1;
     const sources = new Array(bLeft);
     for (i = 0; i < bLeft; i++) {
       sources[i] = -1;
     }
     // Keep track if its possible to remove whole DOM using textContent = '';
-    let canRemoveWholeContent: boolean = aLeft === aLength;
-    let moved: boolean = false;
-    let pos: number = 0;
-    let patched: number = 0;
+    let canRemoveWholeContent = aLeft === aLength;
+    let moved = false;
+    let pos = 0;
+    let patched = 0;
 
     // When sizes are small, just loop them through
     if (bLeft <= 4 || aLeft * bLeft <= 16) {
