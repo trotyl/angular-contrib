@@ -48,7 +48,7 @@
     "@types/node": "^12.7.5",
     "codecov": "^3.1.0",
     "codelyzer": "^5.1.1",
-    "conventional-changelog-cli": "^2.0.5",
+    "conventional-changelog-cli": "^2.0.23",
     "jasmine-core": "^3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.3.0",
