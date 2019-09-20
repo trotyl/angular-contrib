@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgInit } from './init';
+import { NgInit } from './ng-init';
 
 @NgModule({
   declarations: [ NgInit ],

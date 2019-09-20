@@ -1,7 +1,7 @@
 import { Component, EventEmitter, ViewChild } from '@angular/core';
 import { async, fakeAsync, tick, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgNoCheck } from './no-check';
-import { ContribNgNoCheckModule } from './no-check.module';
+import { NgNoCheck } from './ng-no-check';
+import { ContribNgNoCheckModule } from './ng-no-check.module';
 
 describe('NgNoCheck', () => {
   let fixture: ComponentFixture<TestComponent>;

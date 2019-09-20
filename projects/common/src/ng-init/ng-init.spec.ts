@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ContribNgInitModule } from './init.module';
+import { ContribNgInitModule } from './ng-init.module';
 
 describe('ngForIn', () => {
   let fixture: ComponentFixture<TestComponent>;

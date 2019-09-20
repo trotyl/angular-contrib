@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgNoCheck } from './no-check';
+import { NgNoCheck } from './ng-no-check';
 
 @NgModule({
   declarations: [ NgNoCheck ],
