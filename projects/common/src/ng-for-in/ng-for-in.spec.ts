@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ContribNgForInModule } from './for-in.module';
+import { ContribNgForInModule } from './ng-for-in.module';
 
 describe('ngForIn', () => {
   let fixture: ComponentFixture<TestComponent>;

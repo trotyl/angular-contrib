@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgSwitchCasePatcher, NgSwitchDefaultPatcher, NgSwitchPatcher } from './switch-continue';
+import { NgSwitchCasePatcher, NgSwitchDefaultPatcher, NgSwitchPatcher } from './ng-switch-continue';
 
 @NgModule({
   declarations: [ NgSwitchPatcher, NgSwitchCasePatcher, NgSwitchDefaultPatcher ],

@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostBinding, ViewChild } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ContribNgHostModule } from './host.module';
+import { ContribNgHostModule } from './ng-host.module';
 
 function classListOf(element: HTMLElement): string[] {
   return Array.from(element.classList).sort();

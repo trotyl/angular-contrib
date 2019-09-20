@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgHost } from './host';
+import { NgHost } from './ng-host';
 
 @NgModule({
   declarations: [ NgHost ],
