@@ -20,7 +20,8 @@ export function patchChildren(container: Container, lastChildren: ItemNode[], ne
   }
 }
 
-function patchNonKeyedChildren(container: Container, lastChildren: ItemNode[], nextChildren: ItemNode[], lastChildrenLength: number, nextChildrenLength: number) {
+function patchNonKeyedChildren(
+  container: Container, lastChildren: ItemNode[], nextChildren: ItemNode[], lastChildrenLength: number, nextChildrenLength: number) {
   const commonLength = lastChildrenLength > nextChildrenLength ? nextChildrenLength : lastChildrenLength;
   let i = 0;
 

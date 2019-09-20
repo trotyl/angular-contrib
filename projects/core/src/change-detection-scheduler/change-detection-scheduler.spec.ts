@@ -56,7 +56,6 @@ describe('ChangeDetectionScheduler', () => {
 });
 
 @Component({
-  selector: 'test-cmp',
   template: ``,
 })
 class TestComponent {

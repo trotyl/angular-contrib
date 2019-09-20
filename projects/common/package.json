@@ -1,8 +1,8 @@
 {
   "name": "@angular-contrib/common",
-  "version": "0.0.2",
+  "version": "{{ version }}",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/common": "^{{ angularCompatVersion }}",
+    "@angular/core": "^{{ angularCompatVersion }}"
   }
 }

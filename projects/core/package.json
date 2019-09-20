@@ -1,7 +1,7 @@
 {
   "name": "@angular-contrib/core",
-  "version": "0.0.1",
+  "version": "{{ version }}",
   "peerDependencies": {
-    "@angular/core": "^7.0.0"
+    "@angular/core": "^{{ angularCompatVersion }}"
   }
 }

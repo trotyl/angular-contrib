@@ -26,7 +26,6 @@ describe('ngForIn', () => {
 });
 
 @Component({
-  selector: 'test-cmp',
   template: `<p (ngInit)="value = 2">{{ value }}</p>`,
 })
 class TestComponent {

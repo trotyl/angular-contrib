@@ -14,7 +14,7 @@ class ComplexItem {
   toString() { return `{id: ${this.id}, color: ${this.color}}`; }
 }
 
-describe('FastIterableDiffer', function () {
+describe('FastIterableDiffer', () => {
   let differ: FastIterableDiffer<any>;
 
   beforeEach(() => {
@@ -301,7 +301,7 @@ describe('FastIterableDiffer', function () {
   });
 
   describe('forEachOperation', () => {
-    function stringifyItemChange(record: any, p: number, c: number, originalIndex: number) {
+    function stringifyItemChange(record: any, p: number | null, c: number | null, originalIndex: number) {
       const suffix = originalIndex == null ? '' : ' [o=' + originalIndex + ']';
       const value = record.item;
       if (record.currentIndex == null) {
@@ -314,9 +314,9 @@ describe('FastIterableDiffer', function () {
     }
 
     function modifyArrayUsingOperation(
-      arr: number[], endData: any[], prev: number, next: number, value: number) {
+      arr: number[], endData: any[], prev: number | null, next: number | null, value: number) {
       if (prev == null) {
-        arr.splice(next, 0, value);
+        arr.splice(next!, 0, value);
       } else if (next == null) {
         value = arr[prev];
         arr.splice(prev, 1);
@@ -337,7 +337,7 @@ describe('FastIterableDiffer', function () {
         differ = differ.diff(endData)!;
 
         const operations: string[] = [];
-        differ.forEachOperation((record: any, prev: number, next: number) => {
+        differ.forEachOperation((record: any, prev: number | null, next: number | null) => {
           modifyArrayUsingOperation(startData, endData, prev, next, record.item);
           operations.push(stringifyItemChange(record, prev, next, record.previousIndex));
         });
@@ -365,7 +365,7 @@ describe('FastIterableDiffer', function () {
         differ = differ.diff(endData)!;
 
         const operations: string[] = [];
-        differ.forEachOperation((record: any, prev: number, next: number) => {
+        differ.forEachOperation((record: any, prev: number | null, next: number | null) => {
           modifyArrayUsingOperation(startData, endData, prev, next, record.item);
           operations.push(stringifyItemChange(record, prev, next, record.previousIndex));
         });
@@ -392,7 +392,7 @@ describe('FastIterableDiffer', function () {
       differ = differ.diff(endData)!;
 
       const operations: string[] = [];
-      differ.forEachOperation((record: any, prev: number, next: number) => {
+      differ.forEachOperation((record: any, prev: number | null, next: number | null) => {
         modifyArrayUsingOperation(startData, endData, prev, next, record.item);
         operations.push(stringifyItemChange(record, prev, next, record.previousIndex));
       });
@@ -423,7 +423,7 @@ describe('FastIterableDiffer', function () {
       differ = differ.diff(endData)!;
 
       const operations: string[] = [];
-      differ.forEachOperation((record: any, prev: number, next: number) => {
+      differ.forEachOperation((record: any, prev: number | null, next: number | null) => {
         modifyArrayUsingOperation(startData, endData, prev, next, record.item);
         operations.push(stringifyItemChange(record, prev, next, record.previousIndex));
       });
@@ -452,7 +452,7 @@ describe('FastIterableDiffer', function () {
       differ = differ.diff(endData)!;
 
       const operations: string[] = [];
-      differ.forEachOperation((record: any, prev: number, next: number) => {
+      differ.forEachOperation((record: any, prev: number | null, next: number | null) => {
         modifyArrayUsingOperation(startData, endData, prev, next, record.item);
         operations.push(stringifyItemChange(record, prev, next, record.previousIndex));
       });
@@ -484,7 +484,7 @@ describe('FastIterableDiffer', function () {
         differ.diff(endData);
 
         const operations: string[] = [];
-        differ.forEachOperation((record: any, prev: number, next: number) => {
+        differ.forEachOperation((record: any, prev: number | null, next: number | null) => {
           modifyArrayUsingOperation(startData, endData, prev, next, record.item);
           operations.push(stringifyItemChange(record, prev, next, record.previousIndex));
         });
@@ -517,7 +517,7 @@ describe('FastIterableDiffer', function () {
   });
 });
 
-describe('trackBy function by id', function () {
+describe('trackBy function by id', () => {
   let differ: any;
 
   const trackByItemId = (index: number, item: any): any => item.id;
@@ -609,7 +609,7 @@ describe('trackBy function by id', function () {
   });
 });
 
-describe('trackBy function by index', function () {
+describe('trackBy function by index', () => {
   let differ: FastIterableDiffer<string>;
 
   const trackByIndex = (index: number, item: any): number => index;
@@ -667,7 +667,14 @@ function icrAsString<V>(icr: IterableChangeRecord<V>): string {
     stringify(icr.item) + '[' + stringify(icr.previousIndex) + '->' + stringify(icr.currentIndex) + ']';
 }
 
-function iterableChangesAsString({ collection = [] as any, previous = [] as any, additions = [] as any, moves = [] as any, removals = [] as any, identityChanges = [] as any }): string {
+function iterableChangesAsString({
+  collection = [] as any,
+  previous = [] as any,
+  additions = [] as any,
+  moves = [] as any,
+  removals = [] as any,
+  identityChanges = [] as any
+}): string {
   return (
     'collection: ' + collection.join(', ') + '\n' +
     'previous: ' + previous.join(', ') + '\n' +
