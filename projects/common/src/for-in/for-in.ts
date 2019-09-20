@@ -5,9 +5,9 @@ import { Directive, DoCheck, Input, OnChanges, SimpleChange, SimpleChanges } fro
   selector: '[ngFor][ngForIn]',
 })
 export class NgForIn extends NgForOf<string> implements DoCheck, OnChanges {
-  @Input() ngForIn: { [key: string]: any } | Map<string, any> | null;
+  @Input() ngForIn!: { [key: string]: any } | Map<string, any> | null;
 
-  private previousKeys: string[];
+  private previousKeys!: string[];
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('ngForIn' in changes) {

@@ -150,7 +150,6 @@ describe('NgNoCheck with notifier', () => {
 });
 
 @Component({
-  selector: 'test-cmp',
   template: `{{ dynamicValue }}-<span *ngNoCheck>{{ staticValue }}</span>`,
 })
 class TestComponent {
@@ -166,7 +165,6 @@ class TestComponent {
 }
 
 @Component({
-  selector: 'test-cmp',
   template: `{{ dynamicValue }}-<span *ngNoCheck="condition">{{ staticValue }}</span>`,
 })
 class TestComponentWithCondition {
@@ -183,11 +181,10 @@ class TestComponentWithCondition {
 }
 
 @Component({
-  selector: 'test-cmp',
   template: `{{ dynamicValue }}-<span *ngNoCheck>{{ staticValue }}</span>`,
 })
 class TestComponentWithTrigger {
-  @ViewChild(NgNoCheck) ngNoCheck: NgNoCheck;
+  @ViewChild(NgNoCheck, { static: true }) ngNoCheck!: NgNoCheck;
 
   dynamicValue = 0;
   staticValue = 0;
@@ -201,7 +198,6 @@ class TestComponentWithTrigger {
 }
 
 @Component({
-  selector: 'test-cmp',
   template: `{{ dynamicValue }}-<span *ngNoCheck="true; notifier: emitter">{{ staticValue }}</span>`,
 })
 class TestComponentWithNotifier {

@@ -1,7 +1,8 @@
 import { ApplicationRef, ChangeDetectorRef, Component, Injectable, NgZone } from '@angular/core';
 
-const APPLICTIONS = new WeakMap<ChangeDetectorRef, ApplicationRef>();
+const APPLICATIONS = new WeakMap<ChangeDetectorRef, ApplicationRef>();
 const SCHEDULERS = new WeakMap<ApplicationRef, ChangeDetectionScheduler>();
+// tslint:disable-next-line:ban-types
 const PATCHED = new WeakSet<Function>();
 let tickScheduled = false;
 
@@ -45,7 +46,7 @@ let lastActiveApp: ApplicationRef | null = null;
 function interceptApplicationRef(appRef: ApplicationRef): void {
   const tick = appRef.tick;
 
-  appRef.tick = function () {
+  appRef.tick = function() {
     activeApp = lastActiveApp = this;
     tick.call(this);
     activeApp = null;
@@ -64,15 +65,15 @@ function interceptChangeDetectorRef(cdRef: ChangeDetectorRef): void {
     proto = (proto as any).__proto__;
   }
 
-  proto.detectChanges = function () {
-    if (!APPLICTIONS.has(this) && activeApp != null) {
-      APPLICTIONS.set(this, activeApp);
+  proto.detectChanges = function() {
+    if (!APPLICATIONS.has(this) && activeApp != null) {
+      APPLICATIONS.set(this, activeApp);
     }
     detectChanges.call(this);
   };
 
-  proto.markForCheck = function () {
-    const appRef = APPLICTIONS.has(this) ? APPLICTIONS.get(this)! : lastActiveApp;
+  proto.markForCheck = function() {
+    const appRef = APPLICATIONS.has(this) ? APPLICATIONS.get(this)! : lastActiveApp;
     if (appRef != null && SCHEDULERS.has(appRef)) {
       const scheduler = SCHEDULERS.get(appRef)!;
       scheduler.schedule();

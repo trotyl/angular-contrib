@@ -1,34 +1,36 @@
 {
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
+  "extends": "tslint:recommended",
   "rules": {
-    "arrow-return-shorthand": true,
-    "callable-types": true,
-    "class-name": false,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
-    "curly": [true, "ignore-same-line"],
+    "array-type": false,
+    "arrow-parens": false,
     "deprecation": {
-      "severity": "warn"
+      "severity": "warning"
     },
-    "eofline": true,
-    "forin": true,
+    "class-name": false,
+    "component-class-suffix": false,
+    "component-selector": [
+      false,
+      "element",
+      "ng",
+      "kebab-case"
+    ],
+    "contextual-lifecycle": true,
+    "curly": [true, "ignore-same-line"],
+    "directive-class-suffix": false,
+    "directive-selector": [
+      false,
+      "attribute",
+      "ng",
+      "camelCase"
+    ],
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
-    "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
-    "interface-over-type-literal": true,
-    "label-position": true,
+    "interface-name": false,
+    "max-classes-per-file": false,
     "max-line-length": [
-      false,
+      true,
       140
     ],
     "member-access": false,
@@ -43,8 +45,8 @@
         ]
       }
     ],
-    "no-arg": true,
-    "no-bitwise": true,
+    "no-conflicting-lifecycle": false,
+    "no-consecutive-blank-lines": false,
     "no-console": [
       true,
       "debug",
@@ -53,80 +55,43 @@
       "timeEnd",
       "trace"
     ],
-    "no-construct": true,
-    "no-debugger": true,
-    "no-duplicate-super": true,
     "no-empty": false,
-    "no-empty-interface": true,
-    "no-eval": true,
+    "no-host-metadata-property": true,
     "no-inferrable-types": [
       true,
       "ignore-params",
       "ignore-properties"
     ],
-    "no-misused-new": true,
+    "no-input-rename": true,
+    "no-inputs-metadata-property": true,
     "no-non-null-assertion": false,
+    "no-output-native": true,
+    "no-output-on-prefix": true,
+    "no-output-rename": true,
+    "no-outputs-metadata-property": true,
     "no-redundant-jsdoc": true,
-    "no-shadowed-variable": true,
     "no-string-literal": false,
-    "no-string-throw": true,
     "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
-    "no-unnecessary-initializer": true,
-    "no-unused-expression": true,
     "no-use-before-declare": false,
-    "no-var-keyword": true,
-    "object-literal-sort-keys": false,
-    "one-line": [
+    "no-var-requires": false,
+    "object-literal-key-quotes": [
       true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
+      "consistent"
     ],
-    "prefer-const": true,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "prefer-for-of": false,
     "quotemark": [
       true,
       "single"
     ],
-    "radix": true,
-    "semicolon": [
-      true,
-      "always"
-    ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
-    "typedef-whitespace": [
-      true,
-      {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
-      }
-    ],
-    "unified-signatures": true,
-    "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": false,
-    "directive-class-suffix": false
-  }
+    "template-banana-in-box": true,
+    "template-no-negated-async": true,
+    "trailing-comma": false,
+    "use-lifecycle-interface": true,
+    "use-pipe-transform-interface": true
+  },
+  "rulesDirectory": [
+    "codelyzer"
+  ]
 }

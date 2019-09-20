@@ -50,32 +50,32 @@ function interceptRenderer(renderer: Renderer2): void {
   const setProperty = renderer.setProperty;
   const setStyle = renderer.setStyle;
 
-  renderer.addClass = function (el: any, ...restArgs: any[]): void {
-    addClass.call(this, targetOf(this, el), ...restArgs);
+  renderer.addClass = function(el: any, ...restArgs: any[]): void {
+    addClass.call(this, targetOf(this, el), ...restArgs as [string]);
   };
 
-  renderer.removeAttribute = function (el: any, ...restArgs: any[]): void {
+  renderer.removeAttribute = function(el: any, ...restArgs: any[]): void {
     removeAttribute.call(this, targetOf(this, el), name, ...restArgs);
   };
 
-  renderer.removeClass = function (el: any, ...restArgs: any[]): void {
-    removeClass.call(this, targetOf(this, el), ...restArgs);
+  renderer.removeClass = function(el: any, ...restArgs: any[]): void {
+    removeClass.call(this, targetOf(this, el), ...restArgs as [string]);
   };
 
-  renderer.removeStyle = function (el: any, ...restArgs: any[]): void {
-    removeStyle.call(this, targetOf(this, el), ...restArgs);
+  renderer.removeStyle = function(el: any, ...restArgs: any[]): void {
+    removeStyle.call(this, targetOf(this, el), ...restArgs as [string]);
   };
 
-  renderer.setAttribute = function (el: any, ...restArgs: any[]): void {
-    setAttribute.call(this, targetOf(this, el), ...restArgs);
+  renderer.setAttribute = function(el: any, ...restArgs: any[]): void {
+    setAttribute.call(this, targetOf(this, el), ...restArgs as [string, string]);
   };
 
-  renderer.setProperty = function (el: any, ...restArgs: any[]): void {
-    setProperty.call(this, targetOf(this, el), ...restArgs);
+  renderer.setProperty = function(el: any, ...restArgs: any[]): void {
+    setProperty.call(this, targetOf(this, el), ...restArgs as [string, string]);
   };
 
-  renderer.setStyle = function (el: any, ...restArgs: any[]): void {
-    setStyle.call(this, targetOf(this, el), ...restArgs);
+  renderer.setStyle = function(el: any, ...restArgs: any[]): void {
+    setStyle.call(this, targetOf(this, el), ...restArgs as [string, string]);
   };
 }
 

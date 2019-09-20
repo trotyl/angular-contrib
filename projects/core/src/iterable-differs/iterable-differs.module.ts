@@ -7,6 +7,7 @@ export class ContribIterableDiffersModule {
     iterableDiffers: IterableDiffers,
     @Inject(ITERABLE_DIFFER_FACTORIES) extraIterableDifferFactories: IterableDifferFactory[],
   ) {
+    // tslint:disable-next-line:deprecation
     iterableDiffers.factories.unshift(...extraIterableDifferFactories.slice().reverse());
   }
 }

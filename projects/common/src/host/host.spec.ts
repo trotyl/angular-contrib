@@ -120,7 +120,6 @@ describe('NgHost with HostBinding', () => {
 });
 
 @Component({
-  selector: 'test-cmp',
   template: `
     <ng-host class="foo bar" [ngClass]="{'dynamic': true}"
              style="color: red;" [ngStyle]="{'font-size': '36px'}"
@@ -134,7 +133,7 @@ describe('NgHost with HostBinding', () => {
   `,
 })
 class TestComponent {
-  @ViewChild('normal') normalChild: ElementRef;
+  @ViewChild('normal', { static: true }) normalChild!: ElementRef;
 
   constructor(private element: ElementRef) { }
 

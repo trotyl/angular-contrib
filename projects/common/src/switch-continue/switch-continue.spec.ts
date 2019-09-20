@@ -69,7 +69,6 @@ describe('ngSwitchCaseContinue', () => {
 });
 
 @Component({
-  selector: 'test-cmp',
   template: `
     <div #container>
       <ng-container [ngSwitch]="value">
@@ -82,7 +81,7 @@ describe('ngSwitchCaseContinue', () => {
   `,
 })
 class TestComponent {
-  @ViewChild('container') container: ElementRef;
+  @ViewChild('container', { static: true }) container!: ElementRef;
 
   value = 0;
 

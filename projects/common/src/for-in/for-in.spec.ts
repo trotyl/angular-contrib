@@ -109,13 +109,12 @@ describe('ngForIn', () => {
 });
 
 @Component({
-  selector: 'test-cmp',
   template: `
     <div #container><span *ngFor="let key in obj">{{key}}:{{obj[key]}};</span></div>
   `,
 })
 class TestComponent {
-  @ViewChild('container') container: ElementRef;
+  @ViewChild('container', { static: true }) container!: ElementRef;
   obj: any = {a: 1, b: 2};
 
   get textContent(): string {

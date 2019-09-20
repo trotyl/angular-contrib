@@ -7,6 +7,7 @@ export class ContribKeyValueDiffersModule {
     keyValueDiffers: KeyValueDiffers,
     @Inject(KEY_VALUE_DIFFER_FACTORIES) extraKeyValueDifferFactories: KeyValueDifferFactory[],
   ) {
+    // tslint:disable-next-line:deprecation
     keyValueDiffers.factories.unshift(...extraKeyValueDifferFactories.reverse());
   }
 }
