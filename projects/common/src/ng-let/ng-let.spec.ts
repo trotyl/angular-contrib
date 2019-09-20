@@ -19,7 +19,7 @@ describe('ng-let', () => {
     component = fixture.componentInstance;
   });
 
-  it('should display continued cases', () => {
+  it('should render stored value', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.textContent.trim()).toBe(`2`);
   });
