@@ -16,7 +16,7 @@ Supports extending `KeyValueDiffers` with custom differ implementations.
 
 ## Usage
 
-Provding custom `KeyValueDifferFactory` (Non-exclusive):
+Providing custom `KeyValueDifferFactory` (Non-exclusive):
 
 ```typescript
 import { ContribKeyValueDiffersModule, KEY_VALUE_DIFFER_FACTORIES } from '@angular-contrib/core';

@@ -3,6 +3,7 @@
   "version": "{{ version }}",
   "peerDependencies": {
     "@angular/common": "^{{ angularCompatVersion }}",
-    "@angular/core": "^{{ angularCompatVersion }}"
+    "@angular/core": "^{{ angularCompatVersion }}",
+    "@angular-contrib/core": "{{ version }}"
   }
 }
