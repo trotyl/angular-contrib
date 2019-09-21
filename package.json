@@ -1,6 +1,6 @@
 {
   "name": "@angular-contrib/workspace",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -16,11 +16,13 @@
     "build:common": "ng build common",
     "postbuild:common": "cp README.md dist/common",
     "build:all": "yarn build:core && yarn build:common",
+    "postbuild:all": "yarn fill-package-json",
     "test:core": "ng test core --no-watch --code-coverage --no-progress",
     "test:common": "ng test common --no-watch --code-coverage --no-progress",
-    "publish:core": "cd dist/core && npm publish",
-    "publish:common": "cd publish/common && npm publish",
-    "publish:all": "yarn publish:core && yarn publish:common"
+    "publish:core": "cd dist/core && yarn publish",
+    "publish:common": "cd dist/common && yarn publish",
+    "publish:all": "yarn publish:core && yarn publish:common",
+    "fill-package-json": "ts-node --project tsconfig.node.json tools/fill-package-json.ts"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +51,7 @@
     "codecov": "^3.6.1",
     "codelyzer": "^5.1.1",
     "conventional-changelog-cli": "^2.0.23",
+    "handlebars": "^4.2.0",
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.3.0",
