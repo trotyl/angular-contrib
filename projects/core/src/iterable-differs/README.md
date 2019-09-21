@@ -16,7 +16,7 @@ Supports extending `IterableDiffers` with custom differ implementations.
 
 ## Usage
 
-Provding custom `IterableDifferFactory` (Non-exclusive):
+Providing custom `IterableDifferFactory` (Non-exclusive):
 
 ```typescript
 import { ContribIterableDiffersModule, ITERABLE_DIFFER_FACTORIES } from '@angular-contrib/core';

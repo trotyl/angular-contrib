@@ -51,6 +51,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
+    
+      - run: yarn build:all
       
       - run: yarn test
 

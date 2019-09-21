@@ -4,7 +4,7 @@ Automatically trigger change detection without Zone.js.
 
 ## Type
 
-**Enhancement**
+**Patch**
 
 ## Provenance
 

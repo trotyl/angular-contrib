@@ -1,3 +1,4 @@
+export * from './ng-dynamic/index';
 export * from './ng-for-in/index';
 export * from './ng-host/index';
 export * from './ng-init/index';

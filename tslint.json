@@ -31,7 +31,12 @@
     "max-classes-per-file": false,
     "max-line-length": [
       true,
-      140
+      {
+        "limit": 160,
+        "ignore-pattern": "^import |^export {(.*?)}",
+        "check-strings": true,
+        "check-regex": true
+      }
     ],
     "member-access": false,
     "member-ordering": [
@@ -62,7 +67,7 @@
       "ignore-params",
       "ignore-properties"
     ],
-    "no-input-rename": true,
+    "no-input-rename": false,
     "no-inputs-metadata-property": true,
     "no-non-null-assertion": false,
     "no-output-native": true,
