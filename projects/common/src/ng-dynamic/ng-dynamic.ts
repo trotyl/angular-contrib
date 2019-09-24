@@ -1,5 +1,4 @@
 import { Input, KeyValueDiffer, KeyValueDiffers, DoCheck, SimpleChanges, OnChanges, OnInit, ElementRef, Renderer2, Component, ViewChild, AfterContentInit, HostBinding, Directive } from '@angular/core';
-import { RendererExtension } from '@angular-contrib/core';
 
 const EMPTY_OBJ = {};
 
@@ -24,7 +23,6 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
     private host: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private kvDiffers: KeyValueDiffers,
-    private rendererEx: RendererExtension,
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -127,7 +125,7 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
   }
 
   private moveChildNodes(from: Node, to: Node): void {
-    const nodes = this.rendererEx.getChildNodes(from);
+    const nodes = this.renderer.childNodes(from);
     for (let i = 0; i < nodes.length; i++) {
       this.renderer.appendChild(to, nodes[i]);
     }
