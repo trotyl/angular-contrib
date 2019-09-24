@@ -4,7 +4,7 @@ Addition renderer methods for low-level operations.
 
 ## Type
 
-**Service**
+**Provider**
 
 ## Provenance
 
@@ -12,19 +12,17 @@ None.
 
 ## NgModule
 
-`@angular-contrib/core#ContribRendererExtensionModule`
+`@angular-contrib/core#ContribRenderExtensionModule`
 
 ## Usage
 
 ```typescript
-import { RendererExtension } from '@angular-contrib/core';
-
 @Component()
 class MyComponent {
-  constructor(private rendererEx: RendererExtension) {}
+  constructor(private renderer: Renderer2) {}
 
   onAction(node: Node) {
-    const childLength = this.rendererEx.getChildNodes(node).length;
+    const childLength = this.renderer.childNodes(node).length;
 
     if (childLength === 0) {
       throw new Error(`No children available`);
