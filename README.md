@@ -18,7 +18,7 @@ Angular extensions powered by community.
   + [`ngForIn`][NgForIn]
   + [`ngInit`][NgInit]
   + [`ngNoCheck`][NgNoCheck]
-  + [`ngSwitchCaseContinue`][NgSwitchContinue]
+  + [`ngSwitchContinue`][NgSwitchContinue]
 
 ## Usage
 
@@ -66,12 +66,12 @@ class AppComponent { }
 + Any feature once implemented by Angular will be deprecated here;
 
 
-[ChangeDetectionScheduler]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/change-detection-scheduler
-[FastIterableDiffer]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/fast-iterable-differ
-[IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/iterable-differs
-[KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/packages/core/key-value-differs
-[NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/for-in
-[NgInit]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/init
-[NgHost]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/host
-[NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/no-check
-[NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/packages/common/switch-continue
+[ChangeDetectionScheduler]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/change-detection-scheduler
+[FastIterableDiffer]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/fast-iterable-differ
+[IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/iterable-differs
+[KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/key-value-differs
+[NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-for-in
+[NgHost]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-host
+[NgInit]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-init
+[NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-check
+[NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
