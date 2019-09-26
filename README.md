@@ -13,8 +13,13 @@ Angular extensions powered by community.
   + [IterableDiffers Extensibility][IterableDiffersExtensibility]
   + [KeyValueDiffers Extensibility][KeyValueDiffersExtensibility]
   + [`FastIterableDiffer`][FastIterableDiffer]
+  + [`RendererExtensionInterceptor`][RendererExtensionInterceptor]
+  + [`RenderInterceptor`][RenderInterceptor]
+  + [`Styling`][Styling]
 + `@angular-contrib/common`
+  + [`<ng-dynamic>`][NgDynamic]
   + [`<ng-host>`][NgHost]
+  + [`<ng-let>`][NgLet]
   + [`ngForIn`][NgForIn]
   + [`ngInit`][NgInit]
   + [`ngNoCheck`][NgNoCheck]
@@ -70,8 +75,13 @@ class AppComponent { }
 [FastIterableDiffer]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/fast-iterable-differ
 [IterableDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/iterable-differs
 [KeyValueDiffersExtensibility]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/key-value-differs
+[RendererExtensionInterceptor]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/render-extension
+[RenderInterceptor]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/render-intercept
+[Styling]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/styling
+[NgDynamic]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-dynamic
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-for-in
 [NgHost]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-host
 [NgInit]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-init
 [NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-check
 [NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
+[NgLet]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-let
