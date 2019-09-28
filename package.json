@@ -51,7 +51,7 @@
     "codecov": "^3.6.1",
     "codelyzer": "^5.1.2",
     "conventional-changelog-cli": "^2.0.23",
-    "handlebars": "^4.3.3",
+    "handlebars": "^4.3.4",
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.3.0",
