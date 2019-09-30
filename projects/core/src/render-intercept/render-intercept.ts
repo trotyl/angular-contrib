@@ -20,6 +20,9 @@ export interface RenderInterceptor {
   setProperty?(el: Element, name: string, value: unknown, renderer: Renderer2): void;
   setValue?(node: Node, value: string, renderer: Renderer2): void;
   listen?(target: EventTarget, eventName: string, callback: (event: Event) => boolean | void, renderer: Renderer2): () => void;
+
+  begin?(): void;
+  end?(): void;
 }
 
 export const RENDER_INTERCEPTORS = new InjectionToken<RenderInterceptor[]>('RenderInterceptors');
