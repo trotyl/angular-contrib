@@ -49,6 +49,33 @@ export class ContribRenderInterceptModule {
         patchRenderer(originalRenderer);
         return createInterceptingRenderer(originalRenderer, interceptors);
       };
+
+      const originalBegin = rendererFactory.begin;
+      rendererFactory.begin = function(): void {
+        if (originalBegin != null) {
+          originalBegin.call(this);
+        }
+        for (let i = 0; i < interceptors.length; i++) {
+          const interceptor = interceptors[i];
+          if (interceptor.begin != null) {
+            interceptor.begin();
+          }
+        }
+      };
+
+      const originalEnd = rendererFactory.end;
+      rendererFactory.end = function(): void {
+        if (originalEnd != null) {
+          originalEnd.call(this);
+        }
+        for (let i = 0; i < interceptors.length; i++) {
+          const interceptor = interceptors[i];
+          if (interceptor.end != null) {
+            interceptor.end();
+          }
+        }
+      };
+
       this.patchedFactories.add(rendererFactory);
     }
 

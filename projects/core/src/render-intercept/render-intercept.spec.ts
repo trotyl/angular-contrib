@@ -7,6 +7,7 @@ describe('Renderer interception', () => {
   let fixture: ComponentFixture<TestComponent>;
   let component: TestComponent;
   let interceptor: RenderInterceptor;
+  let lifecycles = '';
 
   beforeEach(() => {
     interceptor = {
@@ -21,7 +22,13 @@ describe('Renderer interception', () => {
           value = 'DEF';
         }
         return renderer.createText(value);
-      }
+      },
+      begin() {
+        lifecycles += 'begin;';
+      },
+      end() {
+        lifecycles += 'end;';
+      },
     };
   });
 
@@ -42,6 +49,11 @@ describe('Renderer interception', () => {
 
   it('should apply RenderInterceptor', () => {
     expect(fixture.nativeElement.innerHTML).toBe(`<article id="bar">DEF</article>`);
+  });
+
+  it('should trigger begin and end lifecycle', () => {
+    fixture.detectChanges();
+    expect(lifecycles).toBe('begin;end;');
   });
 
 });
