@@ -20,6 +20,7 @@ Angular extensions powered by community.
   + [`<ng-dynamic>`][NgDynamic]
   + [`<ng-host>`][NgHost]
   + [`<ng-let>`][NgLet]
+  + [`<ng-observe>`][NgObserve]
   + [`ngForIn`][NgForIn]
   + [`ngInit`][NgInit]
   + [`ngNoCheck`][NgNoCheck]
@@ -82,6 +83,7 @@ class AppComponent { }
 [NgForIn]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-for-in
 [NgHost]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-host
 [NgInit]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-init
-[NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-check
-[NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
 [NgLet]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-let
+[NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-check
+[NgObserve]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-observe
+[NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
