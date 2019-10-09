@@ -50,7 +50,7 @@
     "@types/node": "^12.7.12",
     "codecov": "^3.6.1",
     "codelyzer": "^5.1.2",
-    "conventional-changelog-cli": "^2.0.23",
+    "conventional-changelog-cli": "^2.0.25",
     "handlebars": "^4.4.3",
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
