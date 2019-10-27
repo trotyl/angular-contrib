@@ -1,4 +1,4 @@
-import { Input, KeyValueDiffer, KeyValueDiffers, DoCheck, SimpleChanges, OnChanges, OnInit, ElementRef, Renderer2, Component, ViewChild, AfterContentInit, HostBinding, Directive } from '@angular/core';
+import { Input, KeyValueDiffer, KeyValueDiffers, DoCheck, SimpleChanges, OnChanges, OnInit, ElementRef, Renderer2, AfterContentInit, HostBinding, Directive } from '@angular/core';
 
 const EMPTY_OBJ = {};
 
@@ -11,9 +11,8 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
   @Input() attrs: Record<string, string | null> = {};
   @Input() styles: Record<string, string | number | null> = {};
 
-  @HostBinding('style.display') display = 'none';
+  @HostBinding('attr.ngNoHost') noHost = '';
 
-  private hostParent!: Element;
   private el: Element | null = null;
   private propsDiffer: KeyValueDiffer<string, unknown> | null = null;
   private attrsDiffer: KeyValueDiffer<string, string | null> | null = null;
@@ -26,10 +25,6 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.hostParent == null) {
-      this.hostParent = this.renderer.parentNode(this.host.nativeElement);
-    }
-
     if (changes['tag']) {
       this.createNewElement();
     }
@@ -48,10 +43,6 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
   }
 
   ngOnInit(): void {
-    if (this.hostParent == null) {
-      this.hostParent = this.renderer.parentNode(this.host.nativeElement);
-    }
-
     if (this.el == null) {
       this.createNewElement();
     }
@@ -94,9 +85,8 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
     const newElement = this.renderer.createElement(this.tag);
 
     if (this.el != null) {
-      this.renderer.insertBefore(this.hostParent, this.host.nativeElement, this.el);
-      this.renderer.removeChild(this.hostParent, this.el);
       this.moveChildNodes(this.el, newElement);
+      this.renderer.removeChild(this.host.nativeElement, this.el);
     }
 
     this.el = newElement;
@@ -120,8 +110,7 @@ export class NgDynamic implements AfterContentInit, DoCheck, OnChanges, OnInit {
       this.setStyle(style, this.styles[style]);
     }
 
-    this.renderer.insertBefore(this.hostParent, this.el, this.host.nativeElement);
-    this.renderer.removeChild(this.hostParent, this.host.nativeElement);
+    this.renderer.appendChild(this.host.nativeElement, this.el);
   }
 
   private moveChildNodes(from: Node, to: Node): void {
