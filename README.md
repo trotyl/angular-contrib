@@ -24,6 +24,7 @@ Angular extensions powered by community.
   + [`ngForIn`][NgForIn]
   + [`ngInit`][NgInit]
   + [`ngNoCheck`][NgNoCheck]
+  + [`ngNoHost`][NgNoHost]
   + [`ngSwitchContinue`][NgSwitchContinue]
 
 ## Usage
@@ -85,5 +86,6 @@ class AppComponent { }
 [NgInit]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-init
 [NgLet]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-let
 [NgNoCheck]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-check
+[NgNoHost]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-host
 [NgObserve]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-observe
 [NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
