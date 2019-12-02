@@ -1,6 +1,18 @@
 {
   "name": "@angular-contrib/common",
   "version": "{{ version }}",
+  "description": "Community extension to Angular framework",
+  "keywords": ["Angular"],
+  "homepage": "https://github.com/trotyl/angular-contrib",
+  "bugs": {
+    "url": "https://github.com/trotyl/angular-contrib/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trotyl/angular-contrib.git",
+    "directory": "projects/common"
+  },
   "peerDependencies": {
     "@angular/common": "^{{ angularCompatVersion }}",
     "@angular/core": "^{{ angularCompatVersion }}",
