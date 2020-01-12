@@ -16,6 +16,8 @@ Angular extensions powered by community.
   + [`RendererExtensionInterceptor`][RendererExtensionInterceptor]
   + [`RenderInterceptor`][RenderInterceptor]
   + [`Styling`][Styling]
+  + [`BindAttrs`][BindAttrs]
+
 + `@angular-contrib/common`
   + [`<ng-dynamic>`][NgDynamic]
   + [`<ng-host>`][NgHost]
@@ -89,4 +91,4 @@ class AppComponent { }
 [NgNoHost]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-host
 [NgObserve]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-observe
 [NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
-[Bind-Attributes]: https://github.com/trotyl/angular-contrib/tree/master/projects/core/src/iterable-differs
+[Bind-Attrs]: https://github.com/HamedFathi/angular-contrib/tree/master/projects/core/src/bind-attrs
