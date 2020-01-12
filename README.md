@@ -91,4 +91,4 @@ class AppComponent { }
 [NgNoHost]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-no-host
 [NgObserve]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-observe
 [NgSwitchContinue]: https://github.com/trotyl/angular-contrib/tree/master/projects/common/src/ng-switch-continue
-[Bind-Attrs]: https://github.com/HamedFathi/angular-contrib/tree/master/projects/core/src/bind-attrs
+[BindAttrs]: https://github.com/HamedFathi/angular-contrib/tree/master/projects/core/src/bind-attrs
