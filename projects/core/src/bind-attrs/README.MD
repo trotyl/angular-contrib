@@ -27,9 +27,6 @@ export class BadgeComponent implements OnInit {
     public elementRef: ElementRef<HTMLElement>
   ) { }
 
-  ngOnInit() {
-  }
-
 }
 ```
 
