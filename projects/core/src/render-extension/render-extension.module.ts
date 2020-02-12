@@ -5,7 +5,7 @@ import { RendererExtensionInterceptor } from './render-extension';
 
 declare module '@angular/core' {
   interface Renderer2 {
-    childNodes(node: Node): NodeList;
+    childNodes?(node: Node): NodeList;
   }
 }
 
