@@ -10,6 +10,14 @@
     "@angular-devkit/core" "8.3.17"
     rxjs "6.4.0"
 
+"@angular-devkit/architect@0.803.29":
+  version "0.803.29"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.803.29.tgz#0399969087ac77876b8e429cb26eebd20596607b"
+  integrity sha512-yHBud/fZHTelX24yjQg5lefZrfIebruoFTGeOwF0JdX8+KiHcTIxS4LOnUTYriasfHarcHRFXBAV/bRm+wv5ow==
+  dependencies:
+    "@angular-devkit/core" "8.3.29"
+    rxjs "6.4.0"
+
 "@angular-devkit/build-angular@~0.803.17":
   version "0.803.17"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.803.17.tgz#9d64680af2d921b250c70944b4b24569b9f8def3"
@@ -72,12 +80,12 @@
     webpack-subresource-integrity "1.1.0-rc.6"
     worker-plugin "3.2.0"
 
-"@angular-devkit/build-ng-packagr@^0.803.17":
-  version "0.803.17"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.803.17.tgz#b7ffca6775b26bef7d3b9491916ef572feac761c"
-  integrity sha512-nID6aLUeuwMj0vj+pYehOaifUpIt7fW9DYjSRJOQmhhqh+SeJCBUPf3+9f4GAYa1yLkuiEUgS7Pt0m6zig7tdg==
+"@angular-devkit/build-ng-packagr@^0.803.29":
+  version "0.803.29"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.803.29.tgz#2b5b41eabe73a32ce1f856e703104909a611b263"
+  integrity sha512-QrNkwACw73aOcCI+ys+dohUoG9VRElw4TjKWvAz3GsHa/8PQmT2KHahXs6yUgh9/bJOG08Ife1Xw7gYpWz8rLg==
   dependencies:
-    "@angular-devkit/architect" "0.803.17"
+    "@angular-devkit/architect" "0.803.29"
     rxjs "6.4.0"
 
 "@angular-devkit/build-optimizer@0.803.17":
@@ -106,6 +114,17 @@
   integrity sha512-cR2H/7OxxqagwGfzxwNWDOYN4QpOZ56Fei9JED/2p/K/5UDAowl20o3qP9mTfia/lEhFeyjMBcM8gsHxhJNYJQ==
   dependencies:
     ajv "6.10.2"
+    fast-json-stable-stringify "2.0.0"
+    magic-string "0.25.3"
+    rxjs "6.4.0"
+    source-map "0.7.3"
+
+"@angular-devkit/core@8.3.29":
+  version "8.3.29"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.3.29.tgz#3477edd6458653f83e6d78684b100c1bef81382f"
+  integrity sha512-4jdja9QPwR6XG14ZSunyyOWT3nE2WtZC5IMDIBZADxujXvhzOU0n4oWpy6/JVHLUAxYNNgzLz+/LQORRWndcPg==
+  dependencies:
+    ajv "6.12.3"
     fast-json-stable-stringify "2.0.0"
     magic-string "0.25.3"
     rxjs "6.4.0"
@@ -1245,6 +1264,16 @@ ajv@6.10.2, ajv@^6.1.0, ajv@^6.10.2:
   integrity sha512-TXtUUEYHuaTEbLZWIKUr5pmBuhDLy+8KYtPYdcV8qC+pOZL+NKqYwvWSRrVXHn+ZmRRAu8vJTAznH7Oag6RVRw==
   dependencies:
     fast-deep-equal "^2.0.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@6.12.3:
+  version "6.12.3"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.3.tgz#18c5af38a111ddeb4f2697bd78d68abc1cabd706"
+  integrity sha512-4K0cK3L1hsqk9xIb2z9vs/XU+PGJZ9PNpJRDS9YLzmNdX6jmVPfamLvTJr0aDAusnHyCHO6MjzlkAsgtqp9teA==
+  dependencies:
+    fast-deep-equal "^3.1.1"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
@@ -3646,6 +3675,11 @@ fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
+
+fast-deep-equal@^3.1.1:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
+  integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
 fast-json-stable-stringify@2.0.0, fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
