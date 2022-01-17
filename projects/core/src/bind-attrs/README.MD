@@ -12,10 +12,14 @@ None.
 ## Usage
 
 ```html
+// View
+
 <a [bind-attrs]="elementRef" class="badge badge-primary">Primary</a>
 ```
 
 ```ts
+// VewModel
+
 @Component({
   selector: 'badge',
   templateUrl: './badge.component.html'
