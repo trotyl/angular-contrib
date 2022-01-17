@@ -18,7 +18,7 @@ None.
 ```
 
 ```ts
-// VewModel
+// ViewModel
 
 @Component({
   selector: 'badge',
